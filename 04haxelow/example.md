@@ -1,7 +1,8 @@
 #Example
 
-Simply read a file.
-Because it's nice to have a file ready to read, we combine this example with [writing to a file](../01writing/example.md)
+Write to a simple json database...
+Done in Haxe
+
 
 ## How to start
 
@@ -19,7 +20,7 @@ See example below:
 
 ## Install
 
-check out [the installation](installation.md).
+Check out [the installation](installation.md).
 
 
 ## The Main.hx
@@ -27,41 +28,45 @@ check out [the installation](installation.md).
 Open your favorite editor, copy/paste the code and save it in the `src` folder.
 
 
-
 ```
 package ;
-
-import sys.io.File;
-import sys.io.FileOutput;
-import sys.FileSystem;
 
 class Main
 {
 	function new()
 	{
-		trace("Python reading and writing Example");
+		trace("Python Haxelow Example");
 
-		var file : String = 'hello.txt';
-		var str : String = 'Hello World!\tWritten on: ' + Date.now().toString();
+		// Create the database
+		var db = new HaxeLow('db.json');
 
-		// write the file
-		var f:FileOutput = File.write(file,false);
-		f.writeString(str);
-		f.close();
+		// Get a collection of a class
+		var persons = db.col(Person);
 
-		// read the file
-		if(FileSystem.exists(file)){
-			var content = File.getContent(file);
-			trace( '$file: ' + content );
-		} else {
-			trace( "err");
-		}
+		// persons is now an Array<Person>
+		// that can be manipulated as you like
+		persons.push(new Person("Test", 50));
+
+		// Save all collections to disk.
+		// This is the only way to save, no automatic saving
+		// takes place.
+		db.save();
 	}
 
 	static public function main()
 	{
 		var main = new Main();
 	}
+}
+
+class Person {
+	public function new(name, age) {
+		this.name = name;
+		this.age = age;
+	}
+
+	public var name : String;
+	public var age : Int;
 }
 ```
 
@@ -73,10 +78,10 @@ This is the short version, you want to chech out the full version open this [fil
 
 ```
 # // build.hxml
+-lib haxelow
 -cp src
 -main Main
 -python bin/example.py
--dce full
 -cmd cd bin
 -cmd python3 example.py
 ```

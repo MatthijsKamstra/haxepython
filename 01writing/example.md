@@ -72,7 +72,7 @@ This is the short version, you want to chech out the full version open this [fil
 
 
 
-## Build js with Haxe and start Node
+## Build Python with Haxe and start Node
 
 To finish and see what we have, build the file and see the result
 

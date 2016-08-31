@@ -18,6 +18,14 @@
    * [Example](01writing/example.md)
 * [Example Reading](02reading/about.md)
    * [Example](02reading/example.md)
+* [Example json](08json/about.md)
+   * [How to](08json/example.md)
+* [Example flat file](09flatfile/about.md)
+   * [How to](09flatfile/example.md)
+<!-- * [Example SQLite](10sqlite/about.md) -->
+   <!-- * [How to](10sqlite/example.md) -->
+<!-- * [Example MySQL](11mysql/about.md) -->
+   <!-- * [How to](11mysql/example.md) -->
 * Resources
    * [Who to follow](follow.md)
    * [Haxejs](http:/matthijskamstra.github.io/haxejs/)
