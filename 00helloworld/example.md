@@ -1,9 +1,6 @@
-#Example 
+#Hello World Example
 
-This is the hello world in node.js. An example you can find everywhere.
-
-
-## How to start
+Check the [code folder](https://github.com/MatthijsKamstra/haxepython/tree/master/00helloworld/code) for more comments.
 
 Create a folder named **foobar** (please use a better name; any name will do) and create folders **bin** and **src**.
 See example below:
@@ -13,44 +10,21 @@ See example below:
 	+ bin
 	+ src
 		- Main.hx
-	- javascript.hxml
+	- build.hxml
 ```
-
-
-## Install
-
-check out [the installation](installation.md).
-
 
 ## The Main.hx
 
-Open your favorite editor, copy/paste the code and save it in the `src` folder. 
+Open your favorite editor, copy/paste the code and save it in the `src` folder.
 
 ```
 package ;
 
-import js.Node;
-import js.node.Http;
-import js.node.http.ServerResponse;
-import js.node.http.IncomingMessage;
-
-/**
- * @author Matthijs Kamstra aka [mck]
- */
 class Main
 {
 	function new()
 	{
-		trace("Node.js Hello World Example");
-		
-		Http.createServer(function (request:IncomingMessage, response:ServerResponse):Void {
-			response.writeHead(200, {'Content-Type': 'text/plain'});
-			response.end('Hello World\n');
-		}).listen(8080);
-
-		trace('Server started: ');		
-		trace('open http://localhost:8080');		
-		trace('Close Node with CTRL + C');		
+		trace("Python Hello World Example");
 	}
 
 	static public function main()
@@ -58,33 +32,42 @@ class Main
 		var main = new Main();
 	}
 }
-
 ```
 
+## The Haxe build file, build.hxml
 
-## The Haxe build file, javascript.hxml
-
-Copy and past the following lines in a document named `javascript.hxml`
-This is the short version, you want to chech out the full version open this [file](/code/javascript.hxml);
+There are a lot of different arguments that you are able to pass to the Haxe compiler.
+These arguments can also be placed into a text file of one per line with the extension hxml. This file can then be passed directly to the Haxe compiler as a build script.
 
 ```
-# // javascript.hxml
--lib js-kit
--lib hxnodejs
+# // build.hxml
 -cp src
 -main Main
--js bin/example.js
--cmd node bin/example.js
+-python bin/example.py
+-dce full
+-cmd python bin/example.py
 ```
 
 
-
-## Build js with Haxe and start Node
+## Build Python with Haxe
 
 To finish and see what we have, build the file and see the result
 
 1. Open your terminal
-2. `cd ` to the correct folder where you have saved the `javascript.hxml` 
-3. type `haxe javascript.hxml`
+2. `cd ` to the correct folder where you have saved the `build.hxml`
+3. Type `haxe build.hxml`
 4. press enter
+
+
+It will output Python file in the `bin` folder
+
+
+You could build everything directly in the terminal.
+
+```
+haxe -cp src -main Main -python bin/example.py -dce full
+python bin/example.py
+```
+
+It will have the same result
 
