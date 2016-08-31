@@ -1,0 +1,34 @@
+-cmd echo "├─┬ Start Haxe build"
+
+
+# extremly simple hello world
+-cmd cd 00helloworld/code/
+--next
+javascript.hxml
+-cmd echo "│ ├── helloworld/code"
+
+
+# writing
+-cmd cd ../../
+-cmd cd 01writing/code/
+--next
+javascript.hxml
+-cmd echo "│ ├── writing/code"
+
+# reading
+-cmd cd ../../
+-cmd cd 02reading/code/
+--next
+javascript.hxml
+-cmd echo "│ ├── reading/code"
+
+
+# haxelow
+-cmd cd ../../
+-cmd cd 04haxelow/code/
+--next
+javascript.hxml
+-cmd echo "│ ├── haxelow/code"
+
+
+-cmd echo "└── Finished Haxe build"
