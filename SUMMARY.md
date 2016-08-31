@@ -18,11 +18,6 @@
    * [Example](01writing/example.md)
 * [Example Reading](02reading/about.md)
    * [Example](02reading/example.md)
-<!--
-* [Example HaxeLow](04haxelow/about.md)
-   * [Installation](04haxelow/installation.md)
-   * [Example](04haxelow/example.md)
--->
 * Resources
    * [Who to follow](follow.md)
    * [Haxejs](http:/matthijskamstra.github.io/haxejs/)
