@@ -1,7 +1,8 @@
 package ;
 
-import js.Node;
-import js.node.Fs;
+import sys.io.File;
+import sys.io.FileOutput;
+import sys.FileSystem;
 
 /**
  * @author Matthijs Kamstra aka [mck]
@@ -10,26 +11,23 @@ class Main
 {
 	function new()
 	{
-		trace("Node.js reading and writing Example");
-		
-		var str = Date.now().toString();
+		trace("Python reading and writing Example");
+
+		var file : String = 'hello.txt';
+		var str : String = 'Hello World!\tWritten on: ' + Date.now().toString();
 
 		// write the file
-		Fs.writeFile('hello.txt', str, {}, function (err){
-			if (err != null) 
-				trace( "err: " + err );
-			else
-				trace('Hello > hello.txt');
-		});
+		var f:FileOutput = File.write(file,false);
+		f.writeString(str);
+		f.close();
 
 		// read the file
-		Fs.readFile('hello.txt', function (err,data){
-			if(err != null)
-				trace( "err: " + err );
-			else
-				trace( "data: " + data );
-		});
-
+		if(FileSystem.exists(file)){
+			var content = File.getContent(file);
+			trace( '$file: ' + content );
+		} else {
+			trace( "err");
+		}
 	}
 
 	static public function main()

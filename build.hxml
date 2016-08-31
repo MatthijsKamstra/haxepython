@@ -2,33 +2,19 @@
 
 
 # extremly simple hello world
--cmd cd 00helloworld/code/
---next
-javascript.hxml
--cmd echo "│ ├── helloworld/code"
+-cmd haxe -cp 00helloworld/code/src -main Main -python 00helloworld/code/bin/example.py -dce full
+-cmd echo "│ ├── 00helloworld/code"
 
 
 # writing
--cmd cd ../../
--cmd cd 01writing/code/
---next
-javascript.hxml
--cmd echo "│ ├── writing/code"
+-cmd haxe -cp 01writing/code/src -main Main -python 01writing/code/bin/example.py -dce full
+-cmd echo "│ ├── 01writing/code"
 
 # reading
--cmd cd ../../
--cmd cd 02reading/code/
---next
-javascript.hxml
--cmd echo "│ ├── reading/code"
+-cmd haxe -cp 02reading/code/src -main Main -python 02reading/code/bin/example.py -dce full
+-cmd echo "│ ├── 02reading/code"
 
 
-# haxelow
--cmd cd ../../
--cmd cd 04haxelow/code/
---next
-javascript.hxml
--cmd echo "│ ├── haxelow/code"
 
 
 -cmd echo "└── Finished Haxe build"

@@ -1,8 +1,7 @@
-#Example 
+#Example
 
-Simply write to a file.
-Example is from [nodejitsu.com/](https://docs.nodejitsu.com/articles/file-system/how-to-read-files-in-nodejs)
-
+Simply read a file.
+Because it's nice to have a file ready to read, we combine this example with [writing to a file](../01writing/example.md)
 
 ## How to start
 
@@ -14,7 +13,7 @@ See example below:
 	+ bin
 	+ src
 		- Main.hx
-	- javascript.hxml
+	- build.hxml
 ```
 
 
@@ -23,44 +22,40 @@ See example below:
 check out [the installation](installation.md).
 
 
-## Pure node example
-
-```
-fs = require('fs')
-fs.readFile('/etc/hosts', 'utf8', function (err,data) {
-  	if (err) {
-		return console.log(err);
-	}
-	console.log(data);
-});
-```
-
-
 ## The Main.hx
 
-Open your favorite editor, copy/paste the code and save it in the `src` folder. 
+Open your favorite editor, copy/paste the code and save it in the `src` folder.
 
 
 
 ```
 package ;
 
-import js.Node;
-import js.node.Fs;
+import sys.io.File;
+import sys.io.FileOutput;
+import sys.FileSystem;
 
-/**
- * @author Matthijs Kamstra aka [mck]
- */
 class Main
 {
 	function new()
 	{
-		Fs.readFile('/etc/hosts', {encoding:'utf8'}, function (err,data){
-			if(err != null)
-				trace( "err: " + err );
-			else
-				trace( "data: " + data );
-		});
+		trace("Python reading and writing Example");
+
+		var file : String = 'hello.txt';
+		var str : String = 'Hello World!\tWritten on: ' + Date.now().toString();
+
+		// write the file
+		var f:FileOutput = File.write(file,false);
+		f.writeString(str);
+		f.close();
+
+		// read the file
+		if(FileSystem.exists(file)){
+			var content = File.getContent(file);
+			trace( '$file: ' + content );
+		} else {
+			trace( "err");
+		}
 	}
 
 	static public function main()
@@ -71,19 +66,19 @@ class Main
 ```
 
 
-## The Haxe build file, javascript.hxml
+## The Haxe build file, build.hxml
 
-Copy and past the following lines in a document named `javascript.hxml`
-This is the short version, you want to chech out the full version open this [file](/code/javascript.hxml);
+Copy and past the following lines in a document named `build.hxml`
+This is the short version, you want to chech out the full version open this [file](/code/build.hxml);
 
 ```
-# // javascript.hxml
--lib js-kit
--lib hxnodejs
+# // build.hxml
 -cp src
 -main Main
--js bin/example.js
--cmd node bin/example.js
+-python bin/example.py
+-dce full
+-cmd cd bin
+-cmd python3 example.py
 ```
 
 
@@ -93,8 +88,8 @@ This is the short version, you want to chech out the full version open this [fil
 To finish and see what we have, build the file and see the result
 
 1. Open your terminal
-2. `cd ` to the correct folder where you have saved the `javascript.hxml` 
-3. type `haxe javascript.hxml`
+2. `cd ` to the correct folder where you have saved the `build.hxml`
+3. type `haxe build.hxml`
 4. press enter
 
 

@@ -1,7 +1,7 @@
 package ;
 
-import js.Node;
-import js.node.Fs;
+import sys.io.File;
+import sys.io.FileOutput;
 
 /**
  * @author Matthijs Kamstra aka [mck]
@@ -10,21 +10,14 @@ class Main
 {
 	function new()
 	{
-		trace("Node.js writing Example");
-		
-		var str : String = 'Hello World!\nWritten on: ' + Date.now().toString();
-		// this code example is closest to the pure node.js example
-		Fs.writeFile('hello.txt', str, {}, function (err){
-			if (err != null) 
-				trace( "err: " + err );
-			else
-				trace('Hello > hello.txt');
-		});
-	}
+		trace("Python writing Example");
 
-	public function testme(arr):Void
-	{
-	    trace(arr);
+		var file : String = 'hello.txt';
+		var str : String = 'Hello World!\nWritten on: ' + Date.now().toString();
+
+		var f:FileOutput = File.write(file,false);
+		f.writeString(str);
+		f.close();
 	}
 
 	static public function main()

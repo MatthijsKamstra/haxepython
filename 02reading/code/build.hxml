@@ -23,4 +23,5 @@
 -dce full
 
 # Use terminal command to start Python!
--cmd python3 bin/example.py
+-cmd cd bin
+-cmd python3 example.py

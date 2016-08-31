@@ -8,7 +8,7 @@ And a [code editor](#ide) will be useful!
 
 ----
 
-Current version is:  
+Current version is:
 
 * **Haxe** v3.2.1
 
@@ -20,6 +20,22 @@ But if the version numbers changed, it means I haven't updated this part of the 
 ![](../img/haxe_logo.png)
 
 * Get your version here: [http://haxe.org/download/](http://haxe.org/download/)
+
+
+
+<a name="python">
+
+Haxe only works with Python 3, so you need to install python 3.
+
+* Get your version here: [https://www.python.org/downloads/](https://www.python.org/downloads/)
+
+
+Or use your favorite OSX installer:
+
+```
+brew install python3
+```
+
 
 
 <a name="ide"></a>

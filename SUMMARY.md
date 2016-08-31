@@ -13,17 +13,16 @@
    * [Download](haxepython/download.md)
    * [Resources](haxepython/resource.md)
 * [Example Hello World](00helloworld/about.md)
-   * [Installation](00helloworld/installation.md)
    * [Example](00helloworld/example.md)
 * [Example Writing](01writing/about.md)
-   * [Installation](01writing/installation.md)
    * [Example](01writing/example.md)
 * [Example Reading](02reading/about.md)
-   * [Installation](02reading/installation.md)
    * [Example](02reading/example.md)
+<!--
 * [Example HaxeLow](04haxelow/about.md)
    * [Installation](04haxelow/installation.md)
    * [Example](04haxelow/example.md)
+-->
 * Resources
    * [Who to follow](follow.md)
    * [Haxejs](http:/matthijskamstra.github.io/haxejs/)

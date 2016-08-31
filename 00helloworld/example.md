@@ -45,7 +45,7 @@ These arguments can also be placed into a text file of one per line with the ext
 -main Main
 -python bin/example.py
 -dce full
--cmd python bin/example.py
+-cmd python3 bin/example.py
 ```
 
 

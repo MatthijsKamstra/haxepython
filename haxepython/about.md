@@ -5,15 +5,34 @@
 One of the earlier targets added to the Haxe compiler is PHP.
 It was create by Franco Ponticelli and added to the Haxe compiler in 2008.
 
-## What is PHP?
+## What is Python?
 
-> PHP is a server-side scripting language designed for web development but also used as a general-purpose programming language. Originally created by Rasmus Lerdorf in 1994,[3] the PHP reference implementation is now produced by The PHP Group.[4] PHP originally stood for Personal Home Page,[3] but it now stands for the recursive backronym PHP: Hypertext Preprocessor.[5]
+> Python is a widely used high-level, general-purpose, interpreted, dynamic programming language. Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than possible in languages such as C++ or Java. The language provides constructs intended to enable clear programs on both a small and large scale.[28]
 
-Source: [wikipedia](https://en.wikipedia.org/wiki/PHP)
-
-
-## Spares information about PHP on Haxe.org
-<http://haxe.org/manual/target-php-getting-started.html>
+Source: [wikipedia](https://en.wikipedia.org/wiki/Python_(programming_language))
 
 
+Or you could use the definition from [Python](https://www.python.org/about/) website:
+
+>
+Python is powerful... and fast;
+plays well with others;
+runs everywhere;
+is friendly & easy to learn;
+is Open.
+>
+
+>
+These are some of the reasons people who use Python would rather not use anything else.
+>
+
+
+or
+
+>
+Python is a programming language that lets you work more quickly and integrate your systems more effectively.
+>
+>
+You can learn to use Python and see almost immediate gains in productivity and lower maintenance costs.
+>
 
