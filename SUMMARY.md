@@ -20,6 +20,9 @@
    * [Example](02reading/example.md)
 * [Example json](08json/about.md)
    * [How to](08json/example.md)
+* [Example HaxeLow](04haxelow/about.md)
+   * [Installation](04haxelow/installation.md)
+   * [How to](04haxelow/example.md)
 * [Example flat file](09flatfile/about.md)
    * [How to](09flatfile/example.md)
 <!-- * [Example SQLite](10sqlite/about.md) -->

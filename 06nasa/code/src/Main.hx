@@ -1,6 +1,10 @@
 package ;
 
+#if python
 import python.Lib;
+#else
+import neko.Lib;
+#end
 
 import haxe.Http;
 
@@ -35,7 +39,7 @@ class Main
 
 		req.onStatus = function (status : Int)
 		{
-			// trace('status: $status');
+			trace('status: $status');
 		}
 
 		req.request( isPost ); // false=GET, true=POST

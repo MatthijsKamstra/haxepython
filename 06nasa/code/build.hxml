@@ -11,11 +11,12 @@
 #Python target
 -python bin/example.py
 
+
 #You can use -D source-map-content (requires Haxe 3.1+) to have the .hx
 #files directly embedded into the map file, this way you only have to
 #upload it, and it will be always in sync with the compiled .js even if
 #you modify your .hx files.
--D source-map-content
+# -D source-map-content
 
 #Generate source map and add debug information
 -debug
@@ -27,5 +28,26 @@
 -dce full
 
 # Use terminal command to start Python!
+# -cmd cd bin
+# -cmd python3 example.py
+
+
+--next
+
+-cp src
+-main Main
+-neko bin/test.n
+-debug
+-dce full
+
+--next
+
+-cmd echo '\n :: test neko :: \n'
+-cmd neko bin/test.n
+
+-cmd echo '\n :: test Python :: \n'
+# Use terminal command to start Python!
 -cmd cd bin
 -cmd python3 example.py
+
+
