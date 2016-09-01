@@ -305,14 +305,14 @@ class Main:
         print("Python Haxelow Example")
         # src/Main.hx:13
         db = HaxeLow("db.json")
-        # src/Main.hx:20
+        # src/Main.hx:22
         db.col(Person).append(Person("Test", 50))
-        # src/Main.hx:25
+        # src/Main.hx:27
         db.save()
 
     @staticmethod
     def main():
-        # src/Main.hx:33
+        # src/Main.hx:35
         Main()
 Main._hx_class = Main
 _hx_classes["Main"] = Main
@@ -324,9 +324,9 @@ class Person:
     _hx_fields = ["name", "age"]
 
     def __init__(self,name,age):
-        # src/Main.hx:39
+        # src/Main.hx:41
         self.name = name
-        # src/Main.hx:40
+        # src/Main.hx:42
         self.age = age
 
     @staticmethod
