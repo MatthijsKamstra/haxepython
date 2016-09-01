@@ -24,10 +24,5 @@ Some ressources that helped me a gread deal:
 https://github.com/andyli/pyextern/tree/master/out
 
 
-Flask
-
-
-https://gist.github.com/nadako/62ecfba4b6faf14a6c67
-
 
 https://github.com/pallets/flask/blob/master/examples/blueprintexample/simple_page/templates/pages/layout.html

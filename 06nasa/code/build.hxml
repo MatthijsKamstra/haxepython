@@ -46,7 +46,6 @@
 -cmd neko bin/test.n
 
 -cmd echo '\n :: test Python :: \n'
-# Use terminal command to start Python!
 -cmd cd bin
 -cmd python3 example.py
 
