@@ -15,6 +15,8 @@ class Main
 		// Get a collection of a class
 		var persons = db.col(Person);
 
+		
+
 		// persons is now an Array<Person>
 		// that can be manipulated as you like
 		persons.push(new Person("Test", 50));
@@ -24,7 +26,7 @@ class Main
 		// takes place.
 		db.save();
 
-		trace( "open /bin/db.json" );
+		// trace( "open /bin/db.json" );
 
 	}
 

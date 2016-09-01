@@ -6,10 +6,12 @@ class Main:
     __slots__ = ()
 
     def __init__(self):
+        # 00helloworld/code/src/Main.hx:10
         print("Python Hello World Example")
 
     @staticmethod
     def main():
+        # 00helloworld/code/src/Main.hx:15
         Main()
 
 

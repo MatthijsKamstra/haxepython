@@ -302,15 +302,13 @@ class Main:
 
     def __init__(self):
         # src/Main.hx:10
-        print("Node.js Haxelow Example")
+        print("Python Haxelow Example")
         # src/Main.hx:13
         db = HaxeLow("db.json")
         # src/Main.hx:20
         db.col(Person).append(Person("Test", 50))
         # src/Main.hx:25
         db.save()
-        # src/Main.hx:27
-        print("open /bin/db.json")
 
     @staticmethod
     def main():

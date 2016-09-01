@@ -62,55 +62,55 @@ class Main:
     _hx_statics = ["main"]
 
     def __init__(self):
-        # src/Main.hx:8
+        # 08json/code/src/Main.hx:8
         self.json = None
-        # src/Main.hx:14
+        # 08json/code/src/Main.hx:14
         path = (HxOverrides.stringOrNull(Sys.getCwd()) + "/assets/users.json")
-        # src/Main.hx:16
+        # 08json/code/src/Main.hx:16
         if sys_FileSystem.exists(path):
-            # src/Main.hx:18
+            # 08json/code/src/Main.hx:18
             self.json = python_lib_Json.loads(sys_io_File.getContent(path),**python__KwArgs_KwArgs_Impl_.fromT(_hx_AnonObject({'object_hook': python_Lib.dictToAnon})))
-            # src/Main.hx:20
+            # 08json/code/src/Main.hx:20
             self.createList()
         else:
             print(str(("ERROR: there is not file: " + ("null" if path is None else path))))
 
     def createList(self):
-        # src/Main.hx:28
+        # 08json/code/src/Main.hx:28
         html = ""
-        # src/Main.hx:29
+        # 08json/code/src/Main.hx:29
         html = "id\tname\tusername\temail\tphone\twebsite\n"
-        # src/Main.hx:30
-        # src/Main.hx:30
+        # 08json/code/src/Main.hx:30
+        # 08json/code/src/Main.hx:30
         _g1 = 0
         _g = Reflect.field(self.json,"length")
         while (_g1 < _g):
             i = _g1
             _g1 = (_g1 + 1)
-            # src/Main.hx:32
+            # 08json/code/src/Main.hx:32
             _user = HxOverrides.arrayGet(self.json, i)
-            # src/Main.hx:33
+            # 08json/code/src/Main.hx:33
             html = (("null" if html is None else html) + HxOverrides.stringOrNull(((("" + Std.string(_user.id)) + "\t"))))
-            # src/Main.hx:34
+            # 08json/code/src/Main.hx:34
             html = (("null" if html is None else html) + HxOverrides.stringOrNull(((("" + HxOverrides.stringOrNull(_user.name)) + "\t"))))
-            # src/Main.hx:35
+            # 08json/code/src/Main.hx:35
             html = (("null" if html is None else html) + HxOverrides.stringOrNull(((("" + HxOverrides.stringOrNull(_user.username)) + "\t"))))
-            # src/Main.hx:36
+            # 08json/code/src/Main.hx:36
             html = (("null" if html is None else html) + HxOverrides.stringOrNull(((("" + HxOverrides.stringOrNull(_user.email)) + "\t"))))
-            # src/Main.hx:37
+            # 08json/code/src/Main.hx:37
             html = (("null" if html is None else html) + HxOverrides.stringOrNull(((("" + HxOverrides.stringOrNull(_user.phone)) + "\t"))))
-            # src/Main.hx:38
+            # 08json/code/src/Main.hx:38
             html = (("null" if html is None else html) + HxOverrides.stringOrNull(((("" + HxOverrides.stringOrNull(_user.website)) + "\t"))))
-            # src/Main.hx:39
+            # 08json/code/src/Main.hx:39
             html = (("null" if html is None else html) + "\n")
-        # src/Main.hx:41
-        html = (("null" if html is None else html) + "</table>")
-        # src/Main.hx:43
+        # 08json/code/src/Main.hx:41
+        html = (("null" if html is None else html) + "\n")
+        # 08json/code/src/Main.hx:43
         python_Lib.print(html)
 
     @staticmethod
     def main():
-        # src/Main.hx:49
+        # 08json/code/src/Main.hx:49
         Main()
 
 

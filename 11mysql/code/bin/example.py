@@ -4,10 +4,10 @@ from datetime import datetime as python_lib_datetime_Datetime
 from datetime import timezone as python_lib_datetime_Timezone
 import math as python_lib_Math
 import math as Math
-from os import path as python_lib_os_Path
 import inspect as python_lib_Inspect
 import functools as python_lib_Functools
 import random as python_lib_Random
+import sys as python_lib_Sys
 import time as python_lib_Time
 from io import StringIO as python_lib_io_StringIO
 import urllib.parse as python_lib_urllib_Parse
@@ -60,10 +60,164 @@ _hx_classes["Class"] = Class
 class DBStart:
     _hx_class_name = "DBStart"
     __slots__ = ()
+    _hx_methods = ["createRandomUser"]
+    _hx_statics = ["FIRST_NAMES", "SUR_NAMES"]
 
-    def __init__(self):
-        # 10sqlite/code/src/DBStart.hx:13
-        sys_db_Sqlite.open("mybase.ddb")
+    def __init__(self,useMysql = True):
+        # 11mysql/code/src/DBStart.hx:5
+        if (useMysql is None):
+            useMysql = True
+        # 11mysql/code/src/DBStart.hx:8
+        cnx = (sys_db_Sqlite.open("mybase.db") if ((not useMysql)) else sys_db_Mysql.connect(_hx_AnonObject({'host': "localhost", 'port': 3306, 'database': "MyDatabase", 'user': "root", '_hx_pass': "", 'socket': None})))
+        # 11mysql/code/src/DBStart.hx:25
+        sys_db_Manager.set_cnx(cnx)
+        # 11mysql/code/src/DBStart.hx:28
+        sys_db_Manager.initialize()
+        # 11mysql/code/src/DBStart.hx:31
+        if (not sys_db_TableCreate.exists(User.manager)):
+            sys_db_TableCreate.create(User.manager)
+        # 11mysql/code/src/DBStart.hx:36
+        # 11mysql/code/src/DBStart.hx:36
+        _g = 0
+        while (_g < 10):
+            _g = (_g + 1)
+            # 11mysql/code/src/DBStart.hx:38
+            self.createRandomUser().insert()
+        # 11mysql/code/src/DBStart.hx:42
+        sys_db_Manager.cleanup()
+        # 11mysql/code/src/DBStart.hx:45
+        cnx.close()
+
+    def createRandomUser(self):
+        # 11mysql/code/src/DBStart.hx:54
+        x = len(DBStart.FIRST_NAMES)
+        tmp = None
+        if (x <= 0):
+            tmp = 0
+        else:
+            try:
+                tmp = int((python_lib_Random.random() * x))
+            except Exception as _hx_e:
+                _hx_e1 = _hx_e.val if isinstance(_hx_e, _HxException) else _hx_e
+                e = _hx_e1
+                tmp = None
+        tmp1 = (HxOverrides.stringOrNull(python_internal_ArrayImpl._get(DBStart.FIRST_NAMES, tmp)) + " ")
+        x1 = len(DBStart.SUR_NAMES)
+        tmp2 = None
+        if (x1 <= 0):
+            tmp2 = 0
+        else:
+            try:
+                tmp2 = int((python_lib_Random.random() * x1))
+            except Exception as _hx_e:
+                _hx_e1 = _hx_e.val if isinstance(_hx_e, _HxException) else _hx_e
+                e1 = _hx_e1
+                tmp2 = None
+        _name = (("null" if tmp1 is None else tmp1) + HxOverrides.stringOrNull(python_internal_ArrayImpl._get(DBStart.SUR_NAMES, tmp2)))
+        # 11mysql/code/src/DBStart.hx:55
+        x2 = (python_lib_Random.random() * 10)
+        tmp3 = None
+        try:
+            tmp3 = int(x2)
+        except Exception as _hx_e:
+            _hx_e1 = _hx_e.val if isinstance(_hx_e, _HxException) else _hx_e
+            e2 = _hx_e1
+            tmp3 = None
+        tmp4 = ("020 - " + Std.string(tmp3))
+        x3 = (python_lib_Random.random() * 10)
+        tmp5 = None
+        try:
+            tmp5 = int(x3)
+        except Exception as _hx_e:
+            _hx_e1 = _hx_e.val if isinstance(_hx_e, _HxException) else _hx_e
+            e3 = _hx_e1
+            tmp5 = None
+        tmp6 = (("null" if tmp4 is None else tmp4) + Std.string(tmp5))
+        x4 = (python_lib_Random.random() * 10)
+        tmp7 = None
+        try:
+            tmp7 = int(x4)
+        except Exception as _hx_e:
+            _hx_e1 = _hx_e.val if isinstance(_hx_e, _HxException) else _hx_e
+            e4 = _hx_e1
+            tmp7 = None
+        tmp8 = ((("null" if tmp6 is None else tmp6) + Std.string(tmp7)) + " ")
+        x5 = (python_lib_Random.random() * 10)
+        tmp9 = None
+        try:
+            tmp9 = int(x5)
+        except Exception as _hx_e:
+            _hx_e1 = _hx_e.val if isinstance(_hx_e, _HxException) else _hx_e
+            e5 = _hx_e1
+            tmp9 = None
+        tmp10 = (("null" if tmp8 is None else tmp8) + Std.string(tmp9))
+        x6 = (python_lib_Random.random() * 10)
+        tmp11 = None
+        try:
+            tmp11 = int(x6)
+        except Exception as _hx_e:
+            _hx_e1 = _hx_e.val if isinstance(_hx_e, _HxException) else _hx_e
+            e6 = _hx_e1
+            tmp11 = None
+        tmp12 = ((("null" if tmp10 is None else tmp10) + Std.string(tmp11)) + " ")
+        x7 = (python_lib_Random.random() * 10)
+        tmp13 = None
+        try:
+            tmp13 = int(x7)
+        except Exception as _hx_e:
+            _hx_e1 = _hx_e.val if isinstance(_hx_e, _HxException) else _hx_e
+            e7 = _hx_e1
+            tmp13 = None
+        tmp14 = (("null" if tmp12 is None else tmp12) + Std.string(tmp13))
+        x8 = (python_lib_Random.random() * 10)
+        tmp15 = None
+        try:
+            tmp15 = int(x8)
+        except Exception as _hx_e:
+            _hx_e1 = _hx_e.val if isinstance(_hx_e, _HxException) else _hx_e
+            e8 = _hx_e1
+            tmp15 = None
+        _phone = (("null" if tmp14 is None else tmp14) + Std.string(tmp15))
+        # 11mysql/code/src/DBStart.hx:56
+        x9 = (python_lib_Random.random() * 100)
+        tmp16 = None
+        try:
+            tmp16 = int(x9)
+        except Exception as _hx_e:
+            _hx_e1 = _hx_e.val if isinstance(_hx_e, _HxException) else _hx_e
+            e9 = _hx_e1
+            tmp16 = None
+        tmp17 = (tmp16 + 1900)
+        x10 = (python_lib_Random.random() * 12)
+        tmp18 = None
+        try:
+            tmp18 = int(x10)
+        except Exception as _hx_e:
+            _hx_e1 = _hx_e.val if isinstance(_hx_e, _HxException) else _hx_e
+            e10 = _hx_e1
+            tmp18 = None
+        x11 = (python_lib_Random.random() * 30)
+        tmp19 = None
+        try:
+            tmp19 = int(x11)
+        except Exception as _hx_e:
+            _hx_e1 = _hx_e.val if isinstance(_hx_e, _HxException) else _hx_e
+            e11 = _hx_e1
+            tmp19 = None
+        _birthday = Date(tmp17, tmp18, tmp19, 0, 0, 0)
+        # 11mysql/code/src/DBStart.hx:57
+        user = User()
+        # 11mysql/code/src/DBStart.hx:58
+        user.name = _name
+        # 11mysql/code/src/DBStart.hx:59
+        user.phoneNumber = _phone
+        # 11mysql/code/src/DBStart.hx:60
+        user.birthday = _birthday
+        # 11mysql/code/src/DBStart.hx:61
+        return user
+
+    @staticmethod
+    def _hx_empty_init(_hx_o):        pass
 DBStart._hx_class = DBStart
 _hx_classes["DBStart"] = DBStart
 
@@ -72,6 +226,7 @@ class Date:
     _hx_class_name = "Date"
     __slots__ = ("date",)
     _hx_fields = ["date"]
+    _hx_methods = ["toString"]
     _hx_statics = ["EPOCH_UTC", "now", "fromTime", "UTC", "datetimeTimestamp", "fromString"]
 
     def __init__(self,year,month,day,hour,_hx_min,sec):
@@ -83,6 +238,20 @@ class Date:
             day = 1
         # /usr/local/lib/haxe/std/python/_std/Date.hx:36
         self.date = python_lib_datetime_Datetime(year, (month + 1), day, hour, _hx_min, sec, 0)
+
+    def toString(self):
+        # /usr/local/lib/haxe/std/python/_std/Date.hx:83
+        m = ((self.date.month - 1) + 1)
+        # /usr/local/lib/haxe/std/python/_std/Date.hx:84
+        d = self.date.day
+        # /usr/local/lib/haxe/std/python/_std/Date.hx:85
+        h = self.date.hour
+        # /usr/local/lib/haxe/std/python/_std/Date.hx:86
+        mi = self.date.minute
+        # /usr/local/lib/haxe/std/python/_std/Date.hx:87
+        s = self.date.second
+        # /usr/local/lib/haxe/std/python/_std/Date.hx:88
+        return ((((((((((Std.string(self.date.year) + "-") + HxOverrides.stringOrNull(((("0" + Std.string(m)) if ((m < 10)) else ("" + Std.string(m)))))) + "-") + HxOverrides.stringOrNull(((("0" + Std.string(d)) if ((d < 10)) else ("" + Std.string(d)))))) + " ") + HxOverrides.stringOrNull(((("0" + Std.string(h)) if ((h < 10)) else ("" + Std.string(h)))))) + ":") + HxOverrides.stringOrNull(((("0" + Std.string(mi)) if ((mi < 10)) else ("" + Std.string(mi)))))) + ":") + HxOverrides.stringOrNull(((("0" + Std.string(s)) if ((s < 10)) else ("" + Std.string(s))))))
 
     @staticmethod
     def now():
@@ -152,11 +321,31 @@ EnumValue._hx_class = EnumValue
 _hx_classes["EnumValue"] = EnumValue
 
 
+class Lambda:
+    _hx_class_name = "Lambda"
+    __slots__ = ()
+    _hx_statics = ["map"]
+
+    @staticmethod
+    def map(it,f):
+        # /usr/local/lib/haxe/std/Lambda.hx:71
+        l = List()
+        # /usr/local/lib/haxe/std/Lambda.hx:72
+        # /usr/local/lib/haxe/std/Lambda.hx:72
+        tmp = HxOverrides.iterator(it)
+        while tmp.hasNext():
+            l.add(f(tmp.next()))
+        # /usr/local/lib/haxe/std/Lambda.hx:74
+        return l
+Lambda._hx_class = Lambda
+_hx_classes["Lambda"] = Lambda
+
+
 class List:
     _hx_class_name = "List"
     __slots__ = ("h", "q", "length")
     _hx_fields = ["h", "q", "length"]
-    _hx_methods = ["add", "join"]
+    _hx_methods = ["add", "iterator", "join"]
 
     def __init__(self):
         # /usr/local/lib/haxe/std/List.hx:33
@@ -182,6 +371,10 @@ class List:
         _hx_local_1 = _hx_local_0.length
         _hx_local_0.length = (_hx_local_1 + 1)
         _hx_local_1
+
+    def iterator(self):
+        # /usr/local/lib/haxe/std/List.hx:161
+        return _List_ListIterator(self.h)
 
     def join(self,sep):
         # /usr/local/lib/haxe/std/List.hx:191
@@ -232,20 +425,102 @@ _List_ListNode._hx_class = _List_ListNode
 _hx_classes["_List.ListNode"] = _List_ListNode
 
 
+class _List_ListIterator:
+    _hx_class_name = "_List.ListIterator"
+    __slots__ = ("head",)
+    _hx_fields = ["head"]
+    _hx_methods = ["hasNext", "next"]
+
+    def __init__(self,head):
+        # /usr/local/lib/haxe/std/List.hx:269
+        self.head = head
+
+    def hasNext(self):
+        # /usr/local/lib/haxe/std/List.hx:273
+        return (self.head is not None)
+
+    def next(self):
+        # /usr/local/lib/haxe/std/List.hx:277
+        val = self.head.item
+        # /usr/local/lib/haxe/std/List.hx:278
+        self.head = self.head.next
+        # /usr/local/lib/haxe/std/List.hx:279
+        return val
+
+    @staticmethod
+    def _hx_empty_init(_hx_o):
+        _hx_o.head = None
+_List_ListIterator._hx_class = _List_ListIterator
+_hx_classes["_List.ListIterator"] = _List_ListIterator
+
+
 class Main:
     _hx_class_name = "Main"
     __slots__ = ()
+    _hx_methods = ["createList"]
     _hx_statics = ["main"]
 
     def __init__(self):
-        # 10sqlite/code/src/Main.hx:14
-        if (not sys_FileSystem.exists("mybase.ddb")):
-            DBStart()
+        # 11mysql/code/src/Main.hx:25
+        DBStart(True)
+        # 11mysql/code/src/Main.hx:28
+        cnx = None
+        # 11mysql/code/src/Main.hx:34
+        cnx = sys_db_Mysql.connect(_hx_AnonObject({'host': "localhost", 'port': 3306, 'database': "MyDatabase", 'user': "root", '_hx_pass': "", 'socket': None}))
+        # 11mysql/code/src/Main.hx:45
+        sys_db_Manager.set_cnx(cnx)
+        # 11mysql/code/src/Main.hx:48
+        sys_db_Manager.initialize()
+        # 11mysql/code/src/Main.hx:55
+        self.createList()
+        # 11mysql/code/src/Main.hx:58
+        sys_db_Manager.cleanup()
+        # 11mysql/code/src/Main.hx:61
+        cnx.close()
+
+    def createList(self):
+        # 11mysql/code/src/Main.hx:67
+        html = ""
+        # 11mysql/code/src/Main.hx:68
+        html = "<table style=\"width:100%\">"
+        # 11mysql/code/src/Main.hx:69
+        html = ("<table style=\"width:100%\">" + "<tr><th>id</th><th>name</th><th>birthday</th><th>phoneNumber</th></tr>")
+        # 11mysql/code/src/Main.hx:70
+        # 11mysql/code/src/Main.hx:70
+        _g1 = 0
+        _g = User.manager.all().length
+        while (_g1 < _g):
+            i = _g1
+            _g1 = (_g1 + 1)
+            # 11mysql/code/src/Main.hx:72
+            _user = User.manager.unsafeGet(i,True)
+            # 11mysql/code/src/Main.hx:73
+            if (_user is None):
+                continue
+            # 11mysql/code/src/Main.hx:74
+            html = (("null" if html is None else html) + "<tr>")
+            # 11mysql/code/src/Main.hx:75
+            html = (("null" if html is None else html) + HxOverrides.stringOrNull(((("<td>" + Std.string(_user.id)) + "</td>"))))
+            # 11mysql/code/src/Main.hx:76
+            html = (("null" if html is None else html) + HxOverrides.stringOrNull(((("<td>" + HxOverrides.stringOrNull(_user.name)) + "</td>"))))
+            # 11mysql/code/src/Main.hx:77
+            html = (("null" if html is None else html) + ((("<td>" + Std.string(_user.birthday)) + "</td>")))
+            # 11mysql/code/src/Main.hx:78
+            html = (("null" if html is None else html) + HxOverrides.stringOrNull(((("<td>" + HxOverrides.stringOrNull(_user.phoneNumber)) + "</td>"))))
+            # 11mysql/code/src/Main.hx:79
+            html = (("null" if html is None else html) + "</tr>")
+        # 11mysql/code/src/Main.hx:81
+        html = (("null" if html is None else html) + "</table>")
+        # 11mysql/code/src/Main.hx:83
+        python_Lib.print(html)
 
     @staticmethod
     def main():
-        # 10sqlite/code/src/Main.hx:66
+        # 11mysql/code/src/Main.hx:89
         Main()
+
+    @staticmethod
+    def _hx_empty_init(_hx_o):        pass
 Main._hx_class = Main
 _hx_classes["Main"] = Main
 
@@ -572,19 +847,6 @@ class StringBuf:
         _hx_o.length = None
 StringBuf._hx_class = StringBuf
 _hx_classes["StringBuf"] = StringBuf
-
-
-class sys_FileSystem:
-    _hx_class_name = "sys.FileSystem"
-    __slots__ = ()
-    _hx_statics = ["exists"]
-
-    @staticmethod
-    def exists(path):
-        # /usr/local/lib/haxe/std/python/_std/sys/FileSystem.hx:31
-        return python_lib_os_Path.exists(path)
-sys_FileSystem._hx_class = sys_FileSystem
-_hx_classes["sys.FileSystem"] = sys_FileSystem
 
 
 class haxe_IMap:
@@ -938,8 +1200,8 @@ class sys_db_Manager:
     _hx_class_name = "sys.db.Manager"
     __slots__ = ("table_infos", "table_name", "table_keys", "class_proto")
     _hx_fields = ["table_infos", "table_name", "table_keys", "class_proto"]
-    _hx_methods = ["doUpdateCache", "doInsert", "doUpdate", "getUpdateStatement", "doDelete", "doLock", "objectToString", "doSerialize", "normalizeCache", "cacheObject", "make", "unmake", "quoteField", "addKeys", "unsafeExecute", "unsafeObject", "getCnx", "getLockMode", "makeCacheKey", "addToCache", "removeFromCache", "getFromCache"]
-    _hx_statics = ["cnx", "lockMode", "object_cache", "KEYWORDS", "getFieldName", "__depends"]
+    _hx_methods = ["all", "doUpdateCache", "doInsert", "doUpdate", "getUpdateStatement", "doDelete", "doLock", "objectToString", "doSerialize", "normalizeCache", "cacheObject", "make", "unmake", "quoteField", "addKeys", "unsafeExecute", "unsafeObject", "unsafeObjects", "unsafeGet", "dbInfos", "getCnx", "getLockMode", "initRelation", "makeCacheKey", "addToCache", "removeFromCache", "getFromCacheKey", "getFromCache"]
+    _hx_statics = ["cnx", "lockMode", "object_cache", "init_list", "KEYWORDS", "set_cnx", "getFieldName", "initialize", "cleanup", "__depends"]
 
     def __init__(self,classval):
         # /usr/local/lib/haxe/std/sys/db/Manager.hx:61
@@ -961,6 +1223,10 @@ class sys_db_Manager:
         self.table_keys = self.table_infos.key
         # /usr/local/lib/haxe/std/sys/db/Manager.hx:70
         self.class_proto = classval
+
+    def all(self,lock = None):
+        # /usr/local/lib/haxe/std/sys/db/Manager.hx:78
+        return self.unsafeObjects(("SELECT * FROM " + HxOverrides.stringOrNull(self.table_name)),lock)
 
     def doUpdateCache(self,x,name,v):
         # /usr/local/lib/haxe/std/sys/db/Manager.hx:117
@@ -1422,6 +1688,79 @@ class sys_db_Manager:
         # /usr/local/lib/haxe/std/sys/db/Manager.hx:459
         return r1
 
+    def unsafeObjects(self,sql,lock):
+        # /usr/local/lib/haxe/std/sys/db/Manager.hx:463
+        if (lock != False):
+            # /usr/local/lib/haxe/std/sys/db/Manager.hx:464
+            lock = True
+            # /usr/local/lib/haxe/std/sys/db/Manager.hx:465
+            sql = (("null" if sql is None else sql) + HxOverrides.stringOrNull(self.getLockMode()))
+        # /usr/local/lib/haxe/std/sys/db/Manager.hx:467
+        l = self.unsafeExecute(sql).results()
+        # /usr/local/lib/haxe/std/sys/db/Manager.hx:468
+        l2 = List()
+        # /usr/local/lib/haxe/std/sys/db/Manager.hx:469
+        # /usr/local/lib/haxe/std/sys/db/Manager.hx:469
+        _g_head = l.h
+        while (_g_head is not None):
+            val = _g_head.item
+            # /usr/local/lib/haxe/std/sys/db/Manager.hx:462
+            _g_head = _g_head.next
+            # /usr/local/lib/haxe/std/sys/db/Manager.hx:469
+            x = val
+            # /usr/local/lib/haxe/std/sys/db/Manager.hx:470
+            self.normalizeCache(x)
+            # /usr/local/lib/haxe/std/sys/db/Manager.hx:471
+            c = self.getFromCache(x,lock)
+            # /usr/local/lib/haxe/std/sys/db/Manager.hx:472
+            if (c is not None):
+                l2.add(c)
+            else:
+                # /usr/local/lib/haxe/std/sys/db/Manager.hx:475
+                x = self.cacheObject(x,lock)
+                # /usr/local/lib/haxe/std/sys/db/Manager.hx:476
+                self.make(x)
+                # /usr/local/lib/haxe/std/sys/db/Manager.hx:477
+                l2.add(x)
+        # /usr/local/lib/haxe/std/sys/db/Manager.hx:480
+        return l2
+
+    def unsafeGet(self,id,lock = None):
+        # /usr/local/lib/haxe/std/sys/db/Manager.hx:492
+        if (lock is None):
+            lock = True
+        # /usr/local/lib/haxe/std/sys/db/Manager.hx:493
+        if (len(self.table_keys) != 1):
+            raise _HxException("Invalid number of keys")
+        # /usr/local/lib/haxe/std/sys/db/Manager.hx:495
+        if (id is None):
+            return None
+        # /usr/local/lib/haxe/std/sys/db/Manager.hx:497
+        x = self.getFromCacheKey((Std.string(id) + HxOverrides.stringOrNull(self.table_name)))
+        # /usr/local/lib/haxe/std/sys/db/Manager.hx:498
+        if ((x is not None) and (((not lock) or Reflect.field(x,"_lock")))):
+            return x
+        # /usr/local/lib/haxe/std/sys/db/Manager.hx:500
+        s = StringBuf()
+        # /usr/local/lib/haxe/std/sys/db/Manager.hx:501
+        s.b.write("SELECT * FROM ")
+        # /usr/local/lib/haxe/std/sys/db/Manager.hx:502
+        s.b.write(Std.string(self.table_name))
+        # /usr/local/lib/haxe/std/sys/db/Manager.hx:503
+        s.b.write(" WHERE ")
+        # /usr/local/lib/haxe/std/sys/db/Manager.hx:504
+        s.b.write(Std.string(self.quoteField((self.table_keys[0] if 0 < len(self.table_keys) else None))))
+        # /usr/local/lib/haxe/std/sys/db/Manager.hx:505
+        s.b.write(" = ")
+        # /usr/local/lib/haxe/std/sys/db/Manager.hx:506
+        self.getCnx().addValue(s,id)
+        # /usr/local/lib/haxe/std/sys/db/Manager.hx:507
+        return self.unsafeObject(s.b.getvalue(),lock)
+
+    def dbInfos(self):
+        # /usr/local/lib/haxe/std/sys/db/Manager.hx:569
+        return self.table_infos
+
     def getCnx(self):
         # /usr/local/lib/haxe/std/sys/db/Manager.hx:573
         return sys_db_Manager.cnx
@@ -1429,6 +1768,21 @@ class sys_db_Manager:
     def getLockMode(self):
         # /usr/local/lib/haxe/std/sys/db/Manager.hx:577
         return sys_db_Manager.lockMode
+
+    def initRelation(self,r):
+        # /usr/local/lib/haxe/std/sys/db/Manager.hx:607
+        spod = Type.resolveClass(r.type)
+        # /usr/local/lib/haxe/std/sys/db/Manager.hx:608
+        if (spod is None):
+            raise _HxException(("Missing spod type " + HxOverrides.stringOrNull(r.type)))
+        # /usr/local/lib/haxe/std/sys/db/Manager.hx:609
+        manager = Reflect.field(spod,"manager")
+        # /usr/local/lib/haxe/std/sys/db/Manager.hx:613
+        if ((manager is None) or ((manager.table_keys is None))):
+            raise _HxException(((("Invalid manager for relation " + HxOverrides.stringOrNull(self.table_name)) + ":") + HxOverrides.stringOrNull(r.prop)))
+        # /usr/local/lib/haxe/std/sys/db/Manager.hx:614
+        if (len(manager.table_keys) != 1):
+            raise _HxException((((("Relation " + HxOverrides.stringOrNull(r.prop)) + "(") + HxOverrides.stringOrNull(r.key)) + ") on a multiple key table"))
 
     def makeCacheKey(self,x):
         # /usr/local/lib/haxe/std/sys/db/Manager.hx:667
@@ -1470,6 +1824,10 @@ class sys_db_Manager:
     def removeFromCache(self,x):
         # /usr/local/lib/haxe/std/sys/db/Manager.hx:690
         sys_db_Manager.object_cache.remove(self.makeCacheKey(x))
+
+    def getFromCacheKey(self,key):
+        # /usr/local/lib/haxe/std/sys/db/Manager.hx:694
+        return sys_db_Manager.object_cache.h.get(key,None)
 
     def getFromCache(self,x,lock):
         # /usr/local/lib/haxe/std/sys/db/Manager.hx:698
@@ -1513,6 +1871,15 @@ class sys_db_Manager:
     lockMode = None
 
     @staticmethod
+    def set_cnx(c):
+        # /usr/local/lib/haxe/std/sys/db/Manager.hx:51
+        sys_db_Manager.cnx = c
+        # /usr/local/lib/haxe/std/sys/db/Manager.hx:52
+        sys_db_Manager.lockMode = (" FOR UPDATE" if (((c is not None) and ((c.dbName() == "MySQL")))) else "")
+        # /usr/local/lib/haxe/std/sys/db/Manager.hx:53
+        return c
+
+    @staticmethod
     def getFieldName(field):
         # /usr/local/lib/haxe/std/sys/db/Manager.hx:130
         _g = field.t
@@ -1520,6 +1887,34 @@ class sys_db_Manager:
             return ("data_" + HxOverrides.stringOrNull(field.name))
         else:
             return field.name
+
+    @staticmethod
+    def initialize():
+        # /usr/local/lib/haxe/std/sys/db/Manager.hx:594
+        l = sys_db_Manager.init_list
+        # /usr/local/lib/haxe/std/sys/db/Manager.hx:595
+        sys_db_Manager.init_list = List()
+        # /usr/local/lib/haxe/std/sys/db/Manager.hx:596
+        # /usr/local/lib/haxe/std/sys/db/Manager.hx:596
+        _g_head = l.h
+        while (_g_head is not None):
+            val = _g_head.item
+            # /usr/local/lib/haxe/std/sys/db/Manager.hx:593
+            _g_head = _g_head.next
+            # /usr/local/lib/haxe/std/sys/db/Manager.hx:597
+            # /usr/local/lib/haxe/std/sys/db/Manager.hx:597
+            _g = 0
+            _g1 = val.table_infos.relations
+            while (_g < len(_g1)):
+                r = (_g1[_g] if _g >= 0 and _g < len(_g1) else None)
+                _g = (_g + 1)
+                # /usr/local/lib/haxe/std/sys/db/Manager.hx:598
+                val.initRelation(r)
+
+    @staticmethod
+    def cleanup():
+        # /usr/local/lib/haxe/std/sys/db/Manager.hx:602
+        sys_db_Manager.object_cache = haxe_ds_StringMap()
 
     @staticmethod
     def _hx___depends():
@@ -2304,15 +2699,15 @@ class User(sys_db_Object):
 
 
     def __init__(self):
-        # 10sqlite/code/src/User.hx:7
+        # 11mysql/code/src/User.hx:7
         self.phoneNumber = None
-        # 10sqlite/code/src/User.hx:6
+        # 11mysql/code/src/User.hx:6
         self.birthday = None
-        # 10sqlite/code/src/User.hx:5
+        # 11mysql/code/src/User.hx:5
         self.name = None
-        # 10sqlite/code/src/User.hx:4
+        # 11mysql/code/src/User.hx:4
         self.id = None
-        # 10sqlite/code/src/User.hx:3
+        # 11mysql/code/src/User.hx:3
         super().__init__()
 
     def _hx___getManager(self):
@@ -3650,6 +4045,21 @@ python_Boot._hx_class = python_Boot
 _hx_classes["python.Boot"] = python_Boot
 
 
+class python_Lib:
+    _hx_class_name = "python.Lib"
+    __slots__ = ()
+    _hx_statics = ["print"]
+
+    @staticmethod
+    def print(v):
+        # /usr/local/lib/haxe/std/python/Lib.hx:42
+        python_lib_Sys.stdout.buffer.write(Std.string(v).encode("utf-8", "strict"))
+        # /usr/local/lib/haxe/std/python/Lib.hx:43
+        python_lib_Sys.stdout.flush()
+python_Lib._hx_class = python_Lib
+_hx_classes["python.Lib"] = python_Lib
+
+
 class python_internal_ArrayImpl:
     _hx_class_name = "python.internal.ArrayImpl"
     __slots__ = ()
@@ -3856,7 +4266,15 @@ _hx_classes["_HxException"] = _HxException
 class HxOverrides:
     _hx_class_name = "HxOverrides"
     __slots__ = ()
-    _hx_statics = ["eq", "stringOrNull", "toLowerCase"]
+    _hx_statics = ["iterator", "eq", "stringOrNull", "toLowerCase"]
+
+    @staticmethod
+    def iterator(x):
+        # /usr/local/lib/haxe/std/python/internal/HxOverrides.hx:39
+        if isinstance(x,list):
+            return python_HaxeIterator(x.__iter__())
+        # /usr/local/lib/haxe/std/python/internal/HxOverrides.hx:42
+        return x.iterator()
 
     @staticmethod
     def eq(a,b):
@@ -3991,9 +4409,22 @@ _hx_classes["HxString"] = HxString
 class sys_db_Connection:
     _hx_class_name = "sys.db.Connection"
     __slots__ = ()
-    _hx_methods = ["request", "addValue", "lastInsertId", "dbName"]
+    _hx_methods = ["request", "close", "addValue", "lastInsertId", "dbName"]
 sys_db_Connection._hx_class = sys_db_Connection
 _hx_classes["sys.db.Connection"] = sys_db_Connection
+
+
+class sys_db_Mysql:
+    _hx_class_name = "sys.db.Mysql"
+    __slots__ = ()
+    _hx_statics = ["connect"]
+
+    @staticmethod
+    def connect(params):
+        # /usr/local/lib/haxe/std/sys/db/Mysql.hx:34
+        raise _HxException("Not implemented for this platform")
+sys_db_Mysql._hx_class = sys_db_Mysql
+_hx_classes["sys.db.Mysql"] = sys_db_Mysql
 
 class sys_db_RecordType(Enum):
     __slots__ = ()
@@ -4052,7 +4483,7 @@ _hx_classes["sys.db.RecordType"] = sys_db_RecordType
 class sys_db_ResultSet:
     _hx_class_name = "sys.db.ResultSet"
     __slots__ = ()
-    _hx_methods = ["hasNext", "next"]
+    _hx_methods = ["hasNext", "next", "results"]
 sys_db_ResultSet._hx_class = sys_db_ResultSet
 _hx_classes["sys.db.ResultSet"] = sys_db_ResultSet
 
@@ -4069,6 +4500,170 @@ class sys_db_Sqlite:
 sys_db_Sqlite._hx_class = sys_db_Sqlite
 _hx_classes["sys.db.Sqlite"] = sys_db_Sqlite
 
+
+class sys_db_TableCreate:
+    _hx_class_name = "sys.db.TableCreate"
+    __slots__ = ()
+    _hx_statics = ["autoInc", "getTypeSQL", "create", "exists"]
+
+    @staticmethod
+    def autoInc(dbName):
+        # /usr/local/lib/haxe/std/sys/db/TableCreate.hx:29
+        if (dbName == "SQLite"):
+            return "PRIMARY KEY AUTOINCREMENT"
+        else:
+            return "AUTO_INCREMENT"
+
+    @staticmethod
+    def getTypeSQL(t,dbName):
+        # /usr/local/lib/haxe/std/sys/db/TableCreate.hx:33
+        if ((t.index) == 0):
+            return ("INTEGER " + HxOverrides.stringOrNull(sys_db_TableCreate.autoInc(dbName)))
+        elif (((t.index) == 20) or (((t.index) == 1))):
+            return "INTEGER"
+        elif ((t.index) == 2):
+            return ("INTEGER UNSIGNED " + HxOverrides.stringOrNull(sys_db_TableCreate.autoInc(dbName)))
+        elif ((t.index) == 3):
+            return "INTEGER UNSIGNED"
+        elif ((t.index) == 4):
+            return ("BIGINT " + HxOverrides.stringOrNull(sys_db_TableCreate.autoInc(dbName)))
+        elif ((t.index) == 5):
+            return "BIGINT"
+        elif ((t.index) == 6):
+            return "FLOAT"
+        elif ((t.index) == 7):
+            return "DOUBLE"
+        elif ((t.index) == 8):
+            return "TINYINT(1)"
+        elif ((t.index) == 9):
+            return (("VARCHAR(" + Std.string(t.params[0])) + ")")
+        elif ((t.index) == 10):
+            return "DATE"
+        elif ((t.index) == 11):
+            return "DATETIME"
+        elif ((t.index) == 12):
+            return "TIMESTAMP DEFAULT 0"
+        elif ((t.index) == 13):
+            return "TINYTEXT"
+        elif ((t.index) == 14):
+            return "TEXT"
+        elif ((t.index) == 16):
+            return "BLOB"
+        elif ((t.index) == 17):
+            return "LONGBLOB"
+        elif ((((t.index) == 30) or (((t.index) == 22))) or (((t.index) == 18))):
+            return "MEDIUMBLOB"
+        elif ((t.index) == 19):
+            return (("BINARY(" + Std.string(t.params[0])) + ")")
+        elif (((t.index) == 21) or (((t.index) == 15))):
+            return "MEDIUMTEXT"
+        elif ((t.index) == 23):
+            # /usr/local/lib/haxe/std/sys/db/TableCreate.hx:60
+            auto = t.params[1]
+            fl = t.params[0]
+            # /usr/local/lib/haxe/std/sys/db/TableCreate.hx:33
+            return sys_db_TableCreate.getTypeSQL(((sys_db_RecordType.DTinyUInt if ((len(fl) <= 8)) else (sys_db_RecordType.DSmallUInt if ((len(fl) <= 16)) else (sys_db_RecordType.DMediumUInt if ((len(fl) <= 24)) else sys_db_RecordType.DInt))) if auto else sys_db_RecordType.DInt),dbName)
+        elif ((t.index) == 24):
+            return "TINYINT"
+        elif ((t.index) == 26):
+            return "SMALLINT"
+        elif ((t.index) == 27):
+            return "SMALLINT UNSIGNED"
+        elif ((t.index) == 28):
+            return "MEDIUMINT"
+        elif ((t.index) == 29):
+            return "MEDIUMINT UNSIGNED"
+        elif (((t.index) == 31) or (((t.index) == 25))):
+            return "TINYINT UNSIGNED"
+        elif (((t.index) == 33) or (((t.index) == 32))):
+            raise _HxException("assert")
+        else:
+            pass
+
+    @staticmethod
+    def create(manager,engine = None):
+        # /usr/local/lib/haxe/std/sys/db/TableCreate.hx:67
+        def _hx_local_0(v):
+            # /usr/local/lib/haxe/std/sys/db/TableCreate.hx:67
+            return manager.quoteField(v)
+        # /usr/local/lib/haxe/std/sys/db/TableCreate.hx:66
+        quote = _hx_local_0
+        # /usr/local/lib/haxe/std/sys/db/TableCreate.hx:69
+        cnx = manager.getCnx()
+        # /usr/local/lib/haxe/std/sys/db/TableCreate.hx:70
+        if (cnx is None):
+            raise _HxException("SQL Connection not initialized on Manager")
+        # /usr/local/lib/haxe/std/sys/db/TableCreate.hx:72
+        dbName = cnx.dbName()
+        # /usr/local/lib/haxe/std/sys/db/TableCreate.hx:73
+        infos = manager.dbInfos()
+        # /usr/local/lib/haxe/std/sys/db/TableCreate.hx:74
+        sql = (("CREATE TABLE " + HxOverrides.stringOrNull(quote(infos.name))) + " (")
+        # /usr/local/lib/haxe/std/sys/db/TableCreate.hx:75
+        decls = []
+        # /usr/local/lib/haxe/std/sys/db/TableCreate.hx:76
+        hasID = False
+        # /usr/local/lib/haxe/std/sys/db/TableCreate.hx:77
+        # /usr/local/lib/haxe/std/sys/db/TableCreate.hx:77
+        _g = 0
+        _g1 = infos.fields
+        while (_g < len(_g1)):
+            f = (_g1[_g] if _g >= 0 and _g < len(_g1) else None)
+            _g = (_g + 1)
+            # /usr/local/lib/haxe/std/sys/db/TableCreate.hx:78
+            # /usr/local/lib/haxe/std/sys/db/TableCreate.hx:78
+            _g2 = f.t
+            # /usr/local/lib/haxe/std/sys/db/TableCreate.hx:80
+            if ((_g2.index) == 0):
+                hasID = True
+            elif (((_g2.index) == 4) or (((_g2.index) == 2))):
+                # /usr/local/lib/haxe/std/sys/db/TableCreate.hx:82
+                hasID = True
+                # /usr/local/lib/haxe/std/sys/db/TableCreate.hx:83
+                if (dbName == "SQLite"):
+                    raise _HxException((((("S" + HxOverrides.stringOrNull(HxString.substr(Std.string(f.t),1,None))) + " is not supported by ") + ("null" if dbName is None else dbName)) + " : use SId instead"))
+            else:
+                pass
+            # /usr/local/lib/haxe/std/sys/db/TableCreate.hx:87
+            # /usr/local/lib/haxe/std/sys/db/TableCreate.hx:87
+            tmp = ((HxOverrides.stringOrNull(quote(f.name)) + " ") + HxOverrides.stringOrNull(sys_db_TableCreate.getTypeSQL(f.t,dbName)))
+            tmp1 = ("" if (f.isNull) else " NOT NULL")
+            decls.append((("null" if tmp is None else tmp) + ("null" if tmp1 is None else tmp1)))
+        # /usr/local/lib/haxe/std/sys/db/TableCreate.hx:89
+        if ((dbName != "SQLite") or (not hasID)):
+            # /usr/local/lib/haxe/std/sys/db/TableCreate.hx:90
+            tmp2 = ("PRIMARY KEY (" + HxOverrides.stringOrNull(Lambda.map(infos.key,quote).join(",")))
+            decls.append((("null" if tmp2 is None else tmp2) + ")"))
+        # /usr/local/lib/haxe/std/sys/db/TableCreate.hx:91
+        sql = (("null" if sql is None else sql) + HxOverrides.stringOrNull(",".join([python_Boot.toString1(x1,'') for x1 in decls])))
+        # /usr/local/lib/haxe/std/sys/db/TableCreate.hx:92
+        sql = (("null" if sql is None else sql) + ")")
+        # /usr/local/lib/haxe/std/sys/db/TableCreate.hx:93
+        if (engine is not None):
+            sql = (("null" if sql is None else sql) + HxOverrides.stringOrNull((("ENGINE=" + ("null" if engine is None else engine)))))
+        # /usr/local/lib/haxe/std/sys/db/TableCreate.hx:95
+        cnx.request(sql)
+
+    @staticmethod
+    def exists(manager):
+        # /usr/local/lib/haxe/std/sys/db/TableCreate.hx:99
+        cnx = manager.getCnx()
+        # /usr/local/lib/haxe/std/sys/db/TableCreate.hx:100
+        if (cnx is None):
+            raise _HxException("SQL Connection not initialized on Manager")
+        # /usr/local/lib/haxe/std/sys/db/TableCreate.hx:102
+        try:
+            # /usr/local/lib/haxe/std/sys/db/TableCreate.hx:103
+            cnx.request((("SELECT * FROM `" + HxOverrides.stringOrNull(manager.dbInfos().name)) + "` LIMIT 1"))
+            # /usr/local/lib/haxe/std/sys/db/TableCreate.hx:104
+            return True
+        except Exception as _hx_e:
+            _hx_e1 = _hx_e.val if isinstance(_hx_e, _HxException) else _hx_e
+            e = _hx_e1
+            return False
+sys_db_TableCreate._hx_class = sys_db_TableCreate
+_hx_classes["sys.db.TableCreate"] = sys_db_TableCreate
+
 # /usr/local/lib/haxe/std/python/_std/Math.hx:135
 Math.NEGATIVE_INFINITY = float("-inf")
 # /usr/local/lib/haxe/std/python/_std/Math.hx:136
@@ -4078,8 +4673,11 @@ Math.NaN = float("nan")
 # /usr/local/lib/haxe/std/python/_std/Math.hx:138
 Math.PI = python_lib_Math.pi
 
+DBStart.FIRST_NAMES = ["Elina", "Martin", "Lowell", "Corazon", "Diedre", "Slyvia", "Latrice", "Chantell", "Jeff", "Zulma", "Deonna", "Kortney", "Sunshine", "Alysa", "Zane", "Shaina", "Queenie", "Ingeborg", "Jarrod", "Angle"]
+DBStart.SUR_NAMES = ["De Jong", "Jansen", "De Vries", "Van den Berg ", "Van Dijk", "Bakker", "Janssen", "Visser", "Smit", "Meijer", "De Boer", "Mulder", "De Groot", "Bos", "Vos", "Peters", "Hendriks", "Van Leeuwen", "Dekker", "Brouwer", "De Wit", "Dijkstra", "Smits", "De Graaf", "Van der Meer"]
 Date.EPOCH_UTC = python_lib_datetime_Datetime.fromtimestamp(0,python_lib_datetime_Timezone.utc)
 sys_db_Manager.object_cache = haxe_ds_StringMap()
+sys_db_Manager.init_list = List()
 def _hx_init_sys_db_Manager_KEYWORDS():
     # /usr/local/lib/haxe/std/sys/db/Manager.hx:43
     def _hx_local_0():
