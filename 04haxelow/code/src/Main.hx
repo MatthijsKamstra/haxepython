@@ -15,8 +15,6 @@ class Main
 		// Get a collection of a class
 		var persons = db.col(Person);
 
-		
-
 		// persons is now an Array<Person>
 		// that can be manipulated as you like
 		persons.push(new Person("Test", 50));
@@ -25,9 +23,7 @@ class Main
 		// This is the only way to save, no automatic saving
 		// takes place.
 		db.save();
-
 		// trace( "open /bin/db.json" );
-
 	}
 
 	static public function main()

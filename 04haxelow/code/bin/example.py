@@ -305,14 +305,16 @@ class Main:
         print("Python Haxelow Example")
         # src/Main.hx:13
         db = HaxeLow("db.json")
-        # src/Main.hx:22
+        # src/Main.hx:20
         db.col(Person).append(Person("Test", 50))
-        # src/Main.hx:27
+        # src/Main.hx:25
         db.save()
+        # src/Main.hx:26
+        print("open /bin/db.json")
 
     @staticmethod
     def main():
-        # src/Main.hx:35
+        # src/Main.hx:32
         Main()
 Main._hx_class = Main
 _hx_classes["Main"] = Main
@@ -324,9 +326,9 @@ class Person:
     _hx_fields = ["name", "age"]
 
     def __init__(self,name,age):
-        # src/Main.hx:41
+        # src/Main.hx:38
         self.name = name
-        # src/Main.hx:42
+        # src/Main.hx:39
         self.age = age
 
     @staticmethod
@@ -2399,7 +2401,7 @@ class tjson_TJSONEncoder:
                 else:
                     buffer_b.write(Std.string(style.firstEntry(depth)))
                 # /usr/local/lib/haxe/lib/tjson/1,4,0/tjson/TJSON.hx:422
-                buffer_b.write(Std.string((((("\"" + ("null" if field is None else field)) + "\"") + HxOverrides.stringOrNull(style.keyValueSeperator(depth))) + ("null" if vStr is None else vStr))))
+                buffer_b.write(Std.string((((("\"" + ("null" if field is None else field)) + "\"") + HxOverrides.stringOrNull(style.keyValueSeperator(depth))) + Std.string(vStr))))
         # /usr/local/lib/haxe/lib/tjson/1,4,0/tjson/TJSON.hx:429
         buffer_b.write(Std.string(style.endObject(depth)))
         # /usr/local/lib/haxe/lib/tjson/1,4,0/tjson/TJSON.hx:430
