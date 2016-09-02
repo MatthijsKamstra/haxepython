@@ -26,7 +26,7 @@ You see that this is a big international group of talented developers.
 | Dan Korostelev | [nadako](https://github.com/nadako) | [nadako](https://twitter.com/nadako) | <https://nadako.github.io/rants/> |
 | Bruno Garcia | [aduros](https://github.com/aduros) | [b_garcia](https://twitter.com/b_garcia) | <https://aduros.com/games/> |
 | Jason O'Neil | [jasononeil](https://github.com/jasononeil/) |  |  [http://jasono.co/](http://jasono.co/) |
-| frabbit `?` | [frabbit](https://github.com/frabbit) |  |
+| frabbit `?` | [frabbit](https://github.com/frabbit) |  |  |
 | Joshua Granick `5` | [jgranick](https://github.com/jgranick) | [singmajesty](https://twitter.com/singmajesty) | [http://www.joshuagranick.com/](http://www.joshuagranick.com/) |
 | Mark Knol `6` | [mknol](https://twitter.com/mknol) | [markknol](https://github.com/markknol) | <http://blog.stroep.nl/>
 
@@ -67,7 +67,7 @@ I think its AWESOME!!!!
 | Name | Github | Twitter | Blog |
 |------|--------|---------|------|
 | Jason O'Neil | [jasononeil](https://github.com/jasononeil/) |  |  [http://jasono.co/](http://jasono.co/) |
-| Franco Ponticelli | [fponticelli](https://github.com/fponticelli) | [fponticelli](https://twitter.com/fponticelli) | | [http://www.weblob.net/](http://www.weblob.net/)|
+| Franco Ponticelli | [fponticelli](https://github.com/fponticelli) | [fponticelli](https://twitter.com/fponticelli) | [http://www.weblob.net/](http://www.weblob.net/)|
 | Alexander Kuzmenko `2` | [RealyUniqueName](https://github.com/RealyUniqueName) | [RealyUniqueName](https://twitter.com/RealyUniqueName)  |  |
 | Andreas Mokros `3` | [mockey](https://github.com/mockey) |  |  |
 
@@ -89,7 +89,7 @@ Don't know a lot about this target, so here it is.
 
 | Name | Github | Twitter | Blog |
 |------|--------|---------|------|
-| Cauê Waneck  | [waneck](https://github.com/waneck) | [cwaneck](https://twitter.com/cwaneck) |  |  |
+| Cauê Waneck  | [waneck](https://github.com/waneck) | [cwaneck](https://twitter.com/cwaneck) |  |
 | Simon Krajewski `1` | [Simn](https://github.com/Simn) |  |  |
 
 <a name="cs"></a>
