@@ -23,7 +23,7 @@ You see that this is a big international group of talented developers.
 | Cauê Waneck  | [waneck](https://github.com/waneck) | [cwaneck](https://twitter.com/cwaneck)  | |
 | Hugh Sanderson | [hughsando](https://github.com/hughsando) | [gamehaxe](https://twitter.com/gamehaxe) |  [http://gamehaxe.com/](http://gamehaxe.com/) |
 | Andy Li | [andyli](https://github.com/andyli) | [andy_li](https://twitter.com/andy_li) | [http://blog.onthewings.net/](http://blog.onthewings.net/) |
-| Dan Korostelev | [nadako](https://github.com/nadako) | [nadako](https://twitter.com/nadako) | [nadako](https://www.linkedin.com/in/nadako) | <https://nadako.github.io/rants/> |
+| Dan Korostelev | [nadako](https://github.com/nadako) | [nadako](https://twitter.com/nadako) | <https://nadako.github.io/rants/> |
 | Bruno Garcia | [aduros](https://github.com/aduros) | [b_garcia](https://twitter.com/b_garcia) | <https://aduros.com/games/> |
 | Jason O'Neil | [jasononeil](https://github.com/jasononeil/) |  |  [http://jasono.co/](http://jasono.co/) |
 | frabbit `?` | [frabbit](https://github.com/frabbit) |  |
