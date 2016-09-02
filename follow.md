@@ -133,9 +133,9 @@ That's why I have added a list of known game-developers who are cool and helpful
 ------
 
 
-`?` I can't find his real name, but he exists!
-`1` Simn is not easy to follow but very important for Haxe!
-`2` Currently working on PHP7, which is really exciting stuff.
-`3` Unofficial maintainer of the current PHP target
-`5` Joshua is not a maintainer, but also a very helpful guy and co-creator of [OpenFL](http://www.openfl.org/).
-`6` Documentation is __the most important part__ of an open source project!!!!
+* `?` I can't find his real name, but he exists!
+* `1` Simn is not easy to follow but very important for Haxe!
+* `2` Currently working on PHP7, which is really exciting stuff.
+* `3` Unofficial maintainer of the current PHP target
+* `5` Joshua is not a maintainer, but also a very helpful guy and co-creator of [OpenFL](http://www.openfl.org/).
+* `6` Documentation is __the most important part__ of an open source project!!!!
