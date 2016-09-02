@@ -15,25 +15,25 @@ class DBStart
 		// Set as the connection for our SPOD manager
 		// sys.db.Manager.cnx = cnx;
 
-		// // initialize manager
-		// sys.db.Manager.initialize();
+		// initialize manager
+		sys.db.Manager.initialize();
 
-		// // Create the "user" table
-		// if ( !sys.db.TableCreate.exists(User.manager) ) {
-		// 	sys.db.TableCreate.create(User.manager);
-		// }
+		// Create the "user" table
+		if ( !sys.db.TableCreate.exists(User.manager) ) {
+			sys.db.TableCreate.create(User.manager);
+		}
 
-		// // Fill database with users
-		// for (i in 0 ... 10) {
-		// 	var user = createRandomUser();
-		// 	user.insert();
-		// }
+		// Fill database with users
+		for (i in 0 ... 10) {
+			var user = createRandomUser();
+			user.insert();
+		}
 
-		// // close the connection and do some cleanup
-		// sys.db.Manager.cleanup();
+		// close the connection and do some cleanup
+		sys.db.Manager.cleanup();
 
-		// // Close the connection
-		// cnx.close();
+		// Close the connection
+		cnx.close();
 	}
 
 	// Dutch names

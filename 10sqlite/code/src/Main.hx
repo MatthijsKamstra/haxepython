@@ -1,6 +1,16 @@
 package ;
 
+#if php
+import php.Lib;
+#elseif neko
+import neko.Lib;
+#elseif python
 import python.Lib;
+#elseif cpp
+import cpp.Lib;
+#elseif java
+import java.Lib;
+#end
 
 import sys.FileSystem;
 
@@ -15,27 +25,27 @@ class Main
 			// init SQlite database
 			new DBStart();
 		}
-		// // Open a connection
-		// var cnx = sys.db.Sqlite.open("mybase.ddb");
+		// Open a connection
+		var cnx = sys.db.Sqlite.open("mybase.ddb");
 
-		// // Set as the connection for our SPOD manager
-		// sys.db.Manager.cnx = cnx;
+		// Set as the connection for our SPOD manager
+		sys.db.Manager.cnx = cnx;
 
-		// // initialize manager
-		// sys.db.Manager.initialize();
+		// initialize manager
+		sys.db.Manager.initialize();
 
-		// // for (i in 0 ... User.manager.all().length) {
-		// // 	var _user = User.manager.get(i);
-		// // 	if(_user != null) trace(_user.name);
-		// // }
+		// for (i in 0 ... User.manager.all().length) {
+		// 	var _user = User.manager.get(i);
+		// 	if(_user != null) trace(_user.name);
+		// }
 
-		// createList();
+		createList();
 
-		// // close the connection and do some cleanup
-		// sys.db.Manager.cleanup();
+		// close the connection and do some cleanup
+		sys.db.Manager.cleanup();
 
-		// // Close the connection
-		// cnx.close();
+		// Close the connection
+		cnx.close();
 
 	}
 
