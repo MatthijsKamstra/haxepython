@@ -2,8 +2,8 @@
 
 ![Haxe logo](../img/haxe_python_logos.png)
 
-One of the earlier targets added to the Haxe compiler is PHP.
-It was create by Franco Ponticelli and added to the Haxe compiler in 2008.
+Python is one of the youngest targets, but not **the youngest**.
+It's added in Haxe 3.2.0 which is released in 2015.
 
 ## What is Python?
 
