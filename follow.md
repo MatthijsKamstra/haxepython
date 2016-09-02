@@ -7,7 +7,7 @@ You can also be non verbal and just follow Haxe people on Twitter for example.
 I have compiled a list of Haxe peeps with their speciality.
 
 
-[General](haxe) / [Java](java) / [Python](python) / [C++](cpp) / [C#](cs) / [JavaScript](js) / [PHP](php) / [Flash](flash) / [Lua](lua)
+[General](#haxe) / [Java](#java) / [Python](#python) / [C++](#cpp) / [C#](#cs) / [JavaScript](#js) / [PHP](#php) / [Flash](#flash) / [Lua](#lua)
 
 <a name="haxe"></a>
 ##Haxe in general
