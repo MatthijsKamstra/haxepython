@@ -65,27 +65,29 @@ class DBStart:
     _hx_statics = ["FIRST_NAMES", "SUR_NAMES"]
 
     def __init__(self):
-        # 10sqlite/code/src/DBStart.hx:13
+        # src/DBStart.hx:13
         cnx = sys_db_Sqlite.open("mybase.ddb")
-        # 10sqlite/code/src/DBStart.hx:19
+        # src/DBStart.hx:16
+        sys_db_Manager.set_cnx(cnx)
+        # src/DBStart.hx:19
         sys_db_Manager.initialize()
-        # 10sqlite/code/src/DBStart.hx:22
+        # src/DBStart.hx:22
         if (not sys_db_TableCreate.exists(User.manager)):
             sys_db_TableCreate.create(User.manager)
-        # 10sqlite/code/src/DBStart.hx:27
-        # 10sqlite/code/src/DBStart.hx:27
+        # src/DBStart.hx:27
+        # src/DBStart.hx:27
         _g = 0
         while (_g < 10):
             _g = (_g + 1)
-            # 10sqlite/code/src/DBStart.hx:29
+            # src/DBStart.hx:29
             self.createRandomUser().insert()
-        # 10sqlite/code/src/DBStart.hx:33
+        # src/DBStart.hx:33
         sys_db_Manager.cleanup()
-        # 10sqlite/code/src/DBStart.hx:36
+        # src/DBStart.hx:36
         cnx.close()
 
     def createRandomUser(self):
-        # 10sqlite/code/src/DBStart.hx:45
+        # src/DBStart.hx:45
         x = len(DBStart.FIRST_NAMES)
         tmp = None
         if (x <= 0):
@@ -110,7 +112,7 @@ class DBStart:
                 e1 = _hx_e1
                 tmp2 = None
         _name = (("null" if tmp1 is None else tmp1) + HxOverrides.stringOrNull(python_internal_ArrayImpl._get(DBStart.SUR_NAMES, tmp2)))
-        # 10sqlite/code/src/DBStart.hx:46
+        # src/DBStart.hx:46
         x2 = (python_lib_Random.random() * 10)
         tmp3 = None
         try:
@@ -174,7 +176,7 @@ class DBStart:
             e8 = _hx_e1
             tmp15 = None
         _phone = (("null" if tmp14 is None else tmp14) + Std.string(tmp15))
-        # 10sqlite/code/src/DBStart.hx:47
+        # src/DBStart.hx:47
         x9 = (python_lib_Random.random() * 100)
         tmp16 = None
         try:
@@ -201,15 +203,15 @@ class DBStart:
             e11 = _hx_e1
             tmp19 = None
         _birthday = Date(tmp17, tmp18, tmp19, 0, 0, 0)
-        # 10sqlite/code/src/DBStart.hx:48
+        # src/DBStart.hx:48
         user = User()
-        # 10sqlite/code/src/DBStart.hx:49
+        # src/DBStart.hx:49
         user.name = _name
-        # 10sqlite/code/src/DBStart.hx:50
+        # src/DBStart.hx:50
         user.phoneNumber = _phone
-        # 10sqlite/code/src/DBStart.hx:51
+        # src/DBStart.hx:51
         user.birthday = _birthday
-        # 10sqlite/code/src/DBStart.hx:52
+        # src/DBStart.hx:52
         return user
 
     @staticmethod
@@ -457,61 +459,57 @@ class Main:
     _hx_statics = ["main"]
 
     def __init__(self):
-        # 10sqlite/code/src/Main.hx:24
+        # src/Main.hx:24
         if (not sys_FileSystem.exists("mybase.ddb")):
             DBStart()
-        # 10sqlite/code/src/Main.hx:29
+        # src/Main.hx:29
         cnx = sys_db_Sqlite.open("mybase.ddb")
-        # 10sqlite/code/src/Main.hx:32
+        # src/Main.hx:32
         sys_db_Manager.set_cnx(cnx)
-        # 10sqlite/code/src/Main.hx:35
+        # src/Main.hx:35
         sys_db_Manager.initialize()
-        # 10sqlite/code/src/Main.hx:42
+        # src/Main.hx:42
         self.createList()
-        # 10sqlite/code/src/Main.hx:45
+        # src/Main.hx:45
         sys_db_Manager.cleanup()
-        # 10sqlite/code/src/Main.hx:48
+        # src/Main.hx:48
         cnx.close()
 
     def createList(self):
-        # 10sqlite/code/src/Main.hx:54
+        # src/Main.hx:54
         html = ""
-        # 10sqlite/code/src/Main.hx:55
-        html = "<table style=\"width:100%\">"
-        # 10sqlite/code/src/Main.hx:56
-        html = ("<table style=\"width:100%\">" + "<tr><th>id</th><th>name</th><th>birthday</th><th>phoneNumber</th></tr>")
-        # 10sqlite/code/src/Main.hx:57
-        # 10sqlite/code/src/Main.hx:57
+        # src/Main.hx:55
+        html = "id \t|\t name \t|\t birthday \t|\t phoneNumber\n"
+        # src/Main.hx:56
+        html = ("id \t|\t name \t|\t birthday \t|\t phoneNumber\n" + "---------------------------------------------\n")
+        # src/Main.hx:57
+        # src/Main.hx:57
         _g1 = 0
         _g = User.manager.all().length
         while (_g1 < _g):
             i = _g1
             _g1 = (_g1 + 1)
-            # 10sqlite/code/src/Main.hx:59
+            # src/Main.hx:59
             _user = User.manager.unsafeGet(i,True)
-            # 10sqlite/code/src/Main.hx:60
+            # src/Main.hx:60
             if (_user is None):
                 continue
-            # 10sqlite/code/src/Main.hx:61
-            html = (("null" if html is None else html) + "<tr>")
-            # 10sqlite/code/src/Main.hx:62
-            html = (("null" if html is None else html) + HxOverrides.stringOrNull(((("<td>" + Std.string(_user.id)) + "</td>"))))
-            # 10sqlite/code/src/Main.hx:63
-            html = (("null" if html is None else html) + HxOverrides.stringOrNull(((("<td>" + HxOverrides.stringOrNull(_user.name)) + "</td>"))))
-            # 10sqlite/code/src/Main.hx:64
-            html = (("null" if html is None else html) + ((("<td>" + Std.string(_user.birthday)) + "</td>")))
-            # 10sqlite/code/src/Main.hx:65
-            html = (("null" if html is None else html) + HxOverrides.stringOrNull(((("<td>" + HxOverrides.stringOrNull(_user.phoneNumber)) + "</td>"))))
-            # 10sqlite/code/src/Main.hx:66
-            html = (("null" if html is None else html) + "</tr>")
-        # 10sqlite/code/src/Main.hx:68
-        html = (("null" if html is None else html) + "</table>")
-        # 10sqlite/code/src/Main.hx:70
+            # src/Main.hx:61
+            html = (("null" if html is None else html) + HxOverrides.stringOrNull(((("" + Std.string(_user.id)) + " \t|\t "))))
+            # src/Main.hx:62
+            html = (("null" if html is None else html) + HxOverrides.stringOrNull(((("" + HxOverrides.stringOrNull(_user.name)) + " \t|\t "))))
+            # src/Main.hx:63
+            html = (("null" if html is None else html) + ((("" + Std.string(_user.birthday)) + " \t|\t ")))
+            # src/Main.hx:64
+            html = (("null" if html is None else html) + HxOverrides.stringOrNull(((("" + HxOverrides.stringOrNull(_user.phoneNumber)) + " \n "))))
+        # src/Main.hx:66
+        html = (("null" if html is None else html) + "---------------------------------------------\n")
+        # src/Main.hx:68
         python_Lib.print(html)
 
     @staticmethod
     def main():
-        # 10sqlite/code/src/Main.hx:76
+        # src/Main.hx:74
         Main()
 
     @staticmethod
@@ -2707,15 +2705,15 @@ class User(sys_db_Object):
 
 
     def __init__(self):
-        # 10sqlite/code/src/User.hx:7
+        # src/User.hx:7
         self.phoneNumber = None
-        # 10sqlite/code/src/User.hx:6
+        # src/User.hx:6
         self.birthday = None
-        # 10sqlite/code/src/User.hx:5
+        # src/User.hx:5
         self.name = None
-        # 10sqlite/code/src/User.hx:4
+        # src/User.hx:4
         self.id = None
-        # 10sqlite/code/src/User.hx:3
+        # src/User.hx:3
         super().__init__()
 
     def _hx___getManager(self):

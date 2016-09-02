@@ -30,7 +30,6 @@
 # -cmd cd bin
 # -cmd python3 example.py
 
-
 --next
 
 -lib haxelow
@@ -67,5 +66,8 @@
 # -cmd cd bin
 # -cmd neko example.n
 
-# -cmd cd bin/cpp
-# -cmd bin/cpp/Main-debug
+# -cmd cd bin
+# -cmd cpp/Main-debug
+
+-cmd cd bin/java
+-cmd java -jar Main-Debug.jar

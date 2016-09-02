@@ -13,7 +13,7 @@ class DBStart
 		var cnx = sys.db.Sqlite.open("mybase.ddb");
 
 		// Set as the connection for our SPOD manager
-		// sys.db.Manager.cnx = cnx;
+		sys.db.Manager.cnx = cnx;
 
 		// initialize manager
 		sys.db.Manager.initialize();
