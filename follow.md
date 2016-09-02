@@ -7,7 +7,7 @@ You can also be non verbal and just follow Haxe people on Twitter for example.
 I have compiled a list of Haxe peeps with their speciality.
 
 
-[General](#haxe) / [Java](#java) / [Python](#python) / [C++](#cpp) / [C#](#cs) / [JavaScript](#js) / [PHP](#php) / [Flash](#flash) / [Lua](#lua)
+[General](#haxe-in-general) / [Java](#java) / [Python](#python) / [C++](#c) / [C#](#c) / [JavaScript](#javascript--nodejs) / [PHP](#php) / [Flash](#flashas3games) / [Lua](#lua)
 
 <a name="haxe"></a>
 ##Haxe in general
@@ -79,17 +79,8 @@ I know nothing about Lua, so this is the default info that I know.
 
 | Name | Github | Twitter | Blog |
 |------|--------|---------|------|
-| Justin Donaldson | [jdonaldson](https://github.com/jdonaldson) ||
+| Justin Donaldson | [jdonaldson](https://github.com/jdonaldson) | | |
 
-<a name="cs"></a>
-##`C#`
-
-I know nothing about C#, so this is what I know.
-
-| Name | Github | Twitter | Blog |
-|------|--------|---------|------|
-| Simon Krajewski `1` | [Simn](https://github.com/Simn) |  |  |
-| Cauê Waneck  | [waneck](https://github.com/waneck) | [cwaneck](https://twitter.com/cwaneck)  | |
 
 <a name="java"></a>
 ##Java
@@ -100,6 +91,16 @@ Don't know a lot about this target, so here it is.
 |------|--------|---------|------|
 | Cauê Waneck  | [waneck](https://github.com/waneck) | [cwaneck](https://twitter.com/cwaneck) |  |  |
 | Simon Krajewski `1` | [Simn](https://github.com/Simn) |  |  |
+
+<a name="cs"></a>
+##`C#`
+
+I know nothing about C#, so this is what I know.
+
+| Name | Github | Twitter | Blog |
+|------|--------|---------|------|
+| Simon Krajewski `1` | [Simn](https://github.com/Simn) |  |  |
+| Cauê Waneck  | [waneck](https://github.com/waneck) | [cwaneck](https://twitter.com/cwaneck)  | |
 
 
 <a name="cpp"></a>
