@@ -235,65 +235,65 @@ class Main:
     _hx_statics = ["main"]
 
     def __init__(self):
-        # src/Main.hx:18
+        # 06nasa/code/src/Main.hx:18
         self.getUrl(("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=" + HxOverrides.stringOrNull(self.getCurrentDate())),False)
 
     def getUrl(self,url,isPost = False):
-        # src/Main.hx:22
+        # 06nasa/code/src/Main.hx:22
         if (isPost is None):
             isPost = False
-        # src/Main.hx:21
+        # 06nasa/code/src/Main.hx:21
         _gthis = self
-        # src/Main.hx:23
+        # 06nasa/code/src/Main.hx:23
         req = haxe_Http(url)
-        # src/Main.hx:27
+        # 06nasa/code/src/Main.hx:27
         def _hx_local_0(data):
-            # src/Main.hx:27
+            # 06nasa/code/src/Main.hx:27
             try:
-                # src/Main.hx:28
+                # 06nasa/code/src/Main.hx:28
                 json = python_lib_Json.loads(data,**python__KwArgs_KwArgs_Impl_.fromT(_hx_AnonObject({'object_hook': python_Lib.dictToAnon})))
-                # src/Main.hx:29
+                # 06nasa/code/src/Main.hx:29
                 _gthis.showImage(json)
             except Exception as _hx_e:
                 _hx_e1 = _hx_e.val if isinstance(_hx_e, _HxException) else _hx_e
                 e = _hx_e1
                 print(str(e))
-        # src/Main.hx:25
+        # 06nasa/code/src/Main.hx:25
         req.onData = _hx_local_0
-        # src/Main.hx:37
+        # 06nasa/code/src/Main.hx:37
         def _hx_local_1(error):
-            # src/Main.hx:37
+            # 06nasa/code/src/Main.hx:37
             print(str(("error: " + ("null" if error is None else error))))
-        # src/Main.hx:35
+        # 06nasa/code/src/Main.hx:35
         req.onError = _hx_local_1
-        # src/Main.hx:42
+        # 06nasa/code/src/Main.hx:42
         def _hx_local_2(status):
-            # src/Main.hx:42
+            # 06nasa/code/src/Main.hx:42
             print(str(("status: " + Std.string(status))))
-        # src/Main.hx:40
+        # 06nasa/code/src/Main.hx:40
         req.onStatus = _hx_local_2
-        # src/Main.hx:45
+        # 06nasa/code/src/Main.hx:45
         req.request(isPost)
 
     def showImage(self,data):
-        # src/Main.hx:50
+        # 06nasa/code/src/Main.hx:50
         python_Lib.print((((("<img src=\"" + HxOverrides.stringOrNull(data.hdurl)) + "\" alt=\"") + HxOverrides.stringOrNull(data.title)) + "\">"))
 
     def getCurrentDate(self):
-        # src/Main.hx:55
+        # 06nasa/code/src/Main.hx:55
         date = Date.now()
-        # src/Main.hx:56
+        # 06nasa/code/src/Main.hx:56
         year = date.date.year
-        # src/Main.hx:57
+        # 06nasa/code/src/Main.hx:57
         month = ((date.date.month - 1) + 1)
-        # src/Main.hx:58
+        # 06nasa/code/src/Main.hx:58
         day = date.date.day
-        # src/Main.hx:59
+        # 06nasa/code/src/Main.hx:59
         return ((((Std.string(year) + "-") + HxOverrides.stringOrNull(StringTools.lpad(Std.string(month),"0",2))) + "-") + HxOverrides.stringOrNull(StringTools.lpad(Std.string(day),"0",2)))
 
     @staticmethod
     def main():
-        # src/Main.hx:64
+        # 06nasa/code/src/Main.hx:64
         Main()
 
 
