@@ -60,8 +60,8 @@
 
 --next
 
-# -cmd cd bin
-# -cmd python3 example.py
+-cmd cd bin
+-cmd python3 example.py
 
 # -cmd cd bin
 # -cmd neko example.n
@@ -69,5 +69,5 @@
 # -cmd cd bin
 # -cmd cpp/Main-debug
 
--cmd cd bin/java
--cmd java -jar Main-Debug.jar
+# -cmd cd bin/java
+# -cmd java -jar Main-Debug.jar
