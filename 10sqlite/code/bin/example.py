@@ -65,29 +65,29 @@ class DBStart:
     _hx_statics = ["FIRST_NAMES", "SUR_NAMES"]
 
     def __init__(self):
-        # src/DBStart.hx:13
+        # 10sqlite/code/src/DBStart.hx:13
         cnx = sys_db_Sqlite.open("mybase.ddb")
-        # src/DBStart.hx:16
+        # 10sqlite/code/src/DBStart.hx:16
         sys_db_Manager.set_cnx(cnx)
-        # src/DBStart.hx:19
+        # 10sqlite/code/src/DBStart.hx:19
         sys_db_Manager.initialize()
-        # src/DBStart.hx:22
+        # 10sqlite/code/src/DBStart.hx:22
         if (not sys_db_TableCreate.exists(User.manager)):
             sys_db_TableCreate.create(User.manager)
-        # src/DBStart.hx:27
-        # src/DBStart.hx:27
+        # 10sqlite/code/src/DBStart.hx:27
+        # 10sqlite/code/src/DBStart.hx:27
         _g = 0
         while (_g < 10):
             _g = (_g + 1)
-            # src/DBStart.hx:29
+            # 10sqlite/code/src/DBStart.hx:29
             self.createRandomUser().insert()
-        # src/DBStart.hx:33
+        # 10sqlite/code/src/DBStart.hx:33
         sys_db_Manager.cleanup()
-        # src/DBStart.hx:36
+        # 10sqlite/code/src/DBStart.hx:36
         cnx.close()
 
     def createRandomUser(self):
-        # src/DBStart.hx:45
+        # 10sqlite/code/src/DBStart.hx:45
         x = len(DBStart.FIRST_NAMES)
         tmp = None
         if (x <= 0):
@@ -112,7 +112,7 @@ class DBStart:
                 e1 = _hx_e1
                 tmp2 = None
         _name = (("null" if tmp1 is None else tmp1) + HxOverrides.stringOrNull(python_internal_ArrayImpl._get(DBStart.SUR_NAMES, tmp2)))
-        # src/DBStart.hx:46
+        # 10sqlite/code/src/DBStart.hx:46
         x2 = (python_lib_Random.random() * 10)
         tmp3 = None
         try:
@@ -176,7 +176,7 @@ class DBStart:
             e8 = _hx_e1
             tmp15 = None
         _phone = (("null" if tmp14 is None else tmp14) + Std.string(tmp15))
-        # src/DBStart.hx:47
+        # 10sqlite/code/src/DBStart.hx:47
         x9 = (python_lib_Random.random() * 100)
         tmp16 = None
         try:
@@ -203,15 +203,15 @@ class DBStart:
             e11 = _hx_e1
             tmp19 = None
         _birthday = Date(tmp17, tmp18, tmp19, 0, 0, 0)
-        # src/DBStart.hx:48
+        # 10sqlite/code/src/DBStart.hx:48
         user = User()
-        # src/DBStart.hx:49
+        # 10sqlite/code/src/DBStart.hx:49
         user.name = _name
-        # src/DBStart.hx:50
+        # 10sqlite/code/src/DBStart.hx:50
         user.phoneNumber = _phone
-        # src/DBStart.hx:51
+        # 10sqlite/code/src/DBStart.hx:51
         user.birthday = _birthday
-        # src/DBStart.hx:52
+        # 10sqlite/code/src/DBStart.hx:52
         return user
 
     @staticmethod
@@ -459,57 +459,57 @@ class Main:
     _hx_statics = ["main"]
 
     def __init__(self):
-        # src/Main.hx:24
+        # 10sqlite/code/src/Main.hx:24
         if (not sys_FileSystem.exists("mybase.ddb")):
             DBStart()
-        # src/Main.hx:29
+        # 10sqlite/code/src/Main.hx:29
         cnx = sys_db_Sqlite.open("mybase.ddb")
-        # src/Main.hx:32
+        # 10sqlite/code/src/Main.hx:32
         sys_db_Manager.set_cnx(cnx)
-        # src/Main.hx:35
+        # 10sqlite/code/src/Main.hx:35
         sys_db_Manager.initialize()
-        # src/Main.hx:42
+        # 10sqlite/code/src/Main.hx:42
         self.createList()
-        # src/Main.hx:45
+        # 10sqlite/code/src/Main.hx:45
         sys_db_Manager.cleanup()
-        # src/Main.hx:48
+        # 10sqlite/code/src/Main.hx:48
         cnx.close()
 
     def createList(self):
-        # src/Main.hx:54
+        # 10sqlite/code/src/Main.hx:54
         html = ""
-        # src/Main.hx:55
+        # 10sqlite/code/src/Main.hx:55
         html = "id \t|\t name \t|\t birthday \t|\t phoneNumber\n"
-        # src/Main.hx:56
+        # 10sqlite/code/src/Main.hx:56
         html = ("id \t|\t name \t|\t birthday \t|\t phoneNumber\n" + "---------------------------------------------\n")
-        # src/Main.hx:57
-        # src/Main.hx:57
+        # 10sqlite/code/src/Main.hx:57
+        # 10sqlite/code/src/Main.hx:57
         _g1 = 0
         _g = User.manager.all().length
         while (_g1 < _g):
             i = _g1
             _g1 = (_g1 + 1)
-            # src/Main.hx:59
+            # 10sqlite/code/src/Main.hx:59
             _user = User.manager.unsafeGet(i,True)
-            # src/Main.hx:60
+            # 10sqlite/code/src/Main.hx:60
             if (_user is None):
                 continue
-            # src/Main.hx:61
+            # 10sqlite/code/src/Main.hx:61
             html = (("null" if html is None else html) + HxOverrides.stringOrNull(((("" + Std.string(_user.id)) + " \t|\t "))))
-            # src/Main.hx:62
+            # 10sqlite/code/src/Main.hx:62
             html = (("null" if html is None else html) + HxOverrides.stringOrNull(((("" + HxOverrides.stringOrNull(_user.name)) + " \t|\t "))))
-            # src/Main.hx:63
+            # 10sqlite/code/src/Main.hx:63
             html = (("null" if html is None else html) + ((("" + Std.string(_user.birthday)) + " \t|\t ")))
-            # src/Main.hx:64
+            # 10sqlite/code/src/Main.hx:64
             html = (("null" if html is None else html) + HxOverrides.stringOrNull(((("" + HxOverrides.stringOrNull(_user.phoneNumber)) + " \n "))))
-        # src/Main.hx:66
+        # 10sqlite/code/src/Main.hx:66
         html = (("null" if html is None else html) + "---------------------------------------------\n")
-        # src/Main.hx:68
+        # 10sqlite/code/src/Main.hx:68
         python_Lib.print(html)
 
     @staticmethod
     def main():
-        # src/Main.hx:74
+        # 10sqlite/code/src/Main.hx:74
         Main()
 
     @staticmethod
@@ -2705,15 +2705,15 @@ class User(sys_db_Object):
 
 
     def __init__(self):
-        # src/User.hx:7
+        # 10sqlite/code/src/User.hx:7
         self.phoneNumber = None
-        # src/User.hx:6
+        # 10sqlite/code/src/User.hx:6
         self.birthday = None
-        # src/User.hx:5
+        # 10sqlite/code/src/User.hx:5
         self.name = None
-        # src/User.hx:4
+        # 10sqlite/code/src/User.hx:4
         self.id = None
-        # src/User.hx:3
+        # 10sqlite/code/src/User.hx:3
         super().__init__()
 
     def _hx___getManager(self):

@@ -9,12 +9,11 @@ So you want more...
 
 [haxenode](http://matthijskamstra.github.io/haxenode/)
 
+## Haxe and JavaScript
 
-## Haxe and Python
+![Haxe logo](img/haxe_javascript_logos.png)
 
-![Haxe logo](img/haxe_python_logos.png)
-
-[haxepython](http://matthijskamstra.github.io/haxepython/)
+[haxejs](http://matthijskamstra.github.io/haxejs/)
 
 ## Haxe and PHP
 
@@ -22,9 +21,9 @@ So you want more...
 
 [haxephp](http://matthijskamstra.github.io/haxephp/)
 
+## Haxe and Python
 
-## Haxe and JavaScript
+![Haxe logo](img/haxe_python_logos.png)
 
-![Haxe logo](img/haxe_javascript_logos.png)
+[haxepython](http://matthijskamstra.github.io/haxepython/)
 
-[haxejs](http://matthijskamstra.github.io/haxejs/)
