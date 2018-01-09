@@ -15,5 +15,15 @@
             ,"name" : "Test"
             ,"age" : 50
         }
+        ,{
+             "_hxcls" : "Person"
+            ,"name" : "Test"
+            ,"age" : 50
+        }
+        ,{
+             "_hxcls" : "Person"
+            ,"name" : "Test"
+            ,"age" : 50
+        }
     ]
 }

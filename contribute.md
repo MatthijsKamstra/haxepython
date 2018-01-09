@@ -1,10 +1,10 @@
-#Help!
+# Help!
 
 ![HELP](http://lorempixel.com/800/200/technics/HELP/)
 
-or perhaps better
+_or perhaps better_
 
-###Contribute!
+# Contribute!
 
 I wanted to make contributing to this documentation as easy as possible.
 That's why I use Markdown. Developers use it, but is just writing in plane English so **everybody** can write documentation!
@@ -15,7 +15,7 @@ And as a final resort, you can leave your comments/suggestions/etc at the bottom
 
 ### Visit [https://github.com/MatthijsKamstra/haxepython](https://github.com/MatthijsKamstra/haxepython) to modify the "source" aka markdown files.
 
-Found any "bug" or have a great idea? Please create a [new issue](https://github.com/MatthijsKamstra/haxepython/issues/new).
+Found any "bug" or have a great idea? Please create a [new issue](https://github.com/MatthijsKamstra/haxejs/issues/new).
 
 
 ## Why?
@@ -48,7 +48,7 @@ Every new tutorial should have:
 	|	+ bin
 	|	+ src
 	|	|	- Main.hx
-	|	- javascript.hxml
+	|	- build.hxml
 	- about.md (short description what it will do)
 	- install.md (is there something you need to install)
 	- example.md (javscript.hxml, Main.hx, how to build, etc)

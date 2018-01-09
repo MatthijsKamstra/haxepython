@@ -3,7 +3,7 @@
 There is not a lot of information about Haxe and Python. I decided to do something about that.
 
 
-#### Visit the [http://matthijskamstra.github.io/haxepython/](http://matthijskamstra.github.io/haxepython/) !
+#### Visit [http://matthijskamstra.github.io/haxepython/](http://matthijskamstra.github.io/haxepython/) !
 
 
 ## How to contribute?
@@ -16,34 +16,61 @@ But it boils down to: **JUST DO IT!**
 Found any "bug" or have a great idea? Please create a [new issue](https://github.com/MatthijsKamstra/haxepython/issues/new).
 
 
-### How to build?
+## How to build?
 
 I will be using [Gitbook](https://github.com/GitbookIO/gitbook#how-to-use-it) to export to static `html`.
 You need to install Node.js and then you automatically have NPM:
 
 Install gitbook
 
-```
+```bash
 npm install gitbook-cli -g
 ```
 
+or if you have gitbook installed, update it
+```bash
+gitbook update
+```
 I wanted to make the editing of these file as-easy-as-possible.
 This gitbook plugin helps with that: [gitbook plugin edit link](https://www.npmjs.com/package/gitbook-plugin-edit-link).
 And if all fails, I used [Disqus comments on your books](https://github.com/GitbookIO/plugin-disqus) to add comments at the bottom of each page.
 
 Activate the plugins with:
 
-```
+```bash
 gitbook install
 ```
 
 Export everything to `html`
 
-```
+```bash
 gitbook build
 ```
 
 ----
+
+## NPM build
+
+I created a little script with NPM to make my life somewhat easier:
+
+```bash
+npm run gitbook
+```
+
+Will install and update gitbook
+
+```bash
+npm run build
+```
+
+Will remove old `docs`- and `_book`-folder, build new gitbook and rename `_book`- to `docs`-folder.
+
+```bash
+npm run deploy
+```
+
+Will just push everything without consideration
+
 
 ### What is Gitbook?
 
@@ -67,6 +94,3 @@ This should make it easier to **contribute**!
 **MacDown** is a simple-to-use editor for Markdown documents. It renders your Markdown contents real-time into HTML, and display them in a preview panel. You can download it [here](http://macdown.uranusjr.com/).
 
 
-
-### Original haxepython.org?
-You can find the original data at the github account of [theRemix](https://github.com/theRemix/haxepython.org/tree/ajaxloaded/views) in `.jade` files

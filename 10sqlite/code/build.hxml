@@ -30,38 +30,38 @@
 # -cmd cd bin
 # -cmd python3 example.py
 
---next
+# --next
 
--lib haxelow
--cp src
--main Main
--neko bin/example.n
--debug
--dce full
+# -lib haxelow
+# -cp src
+# -main Main
+# -neko bin/example.n
+# -debug
+# -dce full
 
---next
+# --next
 
--lib haxelow
--cp src
--main Main
--cpp bin/cpp
--debug
--dce full
+# -lib haxelow
+# -cp src
+# -main Main
+# -cpp bin/cpp
+# -debug
+# -dce full
 
---next
+# --next
 
--lib haxelow
--cp src
--main Main
--java bin/java
--debug
--dce full
+# -lib haxelow
+# -cp src
+# -main Main
+# -java bin/java
+# -debug
+# -dce full
 
 
---next
+# --next
 
--cmd cd bin
--cmd python3 example.py
+# -cmd cd bin
+# -cmd python3 example.py
 
 # -cmd cd bin
 # -cmd neko example.n

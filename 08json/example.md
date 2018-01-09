@@ -1,4 +1,4 @@
-#Example json
+# Example json
 
 I have created the [user.json](https://github.com/MatthijsKamstra/haxepython/tree/master/08json/code/bin/www/assets/users.json) with <http://jsonplaceholder.typicode.com/users>.
 
@@ -26,7 +26,7 @@ See example below:
 
 ## The Main.hx
 
-This example is too big to post here, so if you want to check out the complete file visit [Main.hx](https://github.com/MatthijsKamstra/haxepython/tree/master/08json/code/Main.hx)
+This example is getting to big to post here, so if you want to check out the complete file go and check out [Main.hx](https://github.com/MatthijsKamstra/haxepython/tree/master/08json/code/Main.hx)
 
 So the first part of this code is loading the `json` file:
 
@@ -43,14 +43,14 @@ if(sys.FileSystem.exists(path)){
 convert data (String) to a `json` file:
 <http://api.haxe.org/haxe/Json.html>
 
-```
+```haxe
 	// trace('str: $str');
 	json = haxe.Json.parse(str);
 ```
 
 And then it's possible to convert the `json` to usable input:
 
-```
+```haxe
 for (i in 0 ... json.length)
 {
 	var _user = json[i];
@@ -63,7 +63,7 @@ To make that easier I use [`typedef`](http://haxe.org/manual/type-system-typedef
 
 We convert the json data to `User` so when we use a IDE it will use autocompletion
 
-```
+```haxe
 typedef User =
 {
 	var id : Int; // 1

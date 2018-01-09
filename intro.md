@@ -8,19 +8,19 @@ As most target with Haxe, they are poorly documented.
 I hope this will help. If you think so, why not help with [contribution](contribute.md) to this tutorial site.
 
 
-###How will this help me?
+### How will this help me?
 
-It will get you started with Node.js **and** Haxe.
+It will get you started with Python **and** Haxe.
 How to setup your project, install externs and how to work with them. This probably will never be a complete documentation but it will help you get started!
 
-###Who is this for?
+### Who is this for?
 
 For clever, cool and handsome developers. Duh! :D
 
 ## Documentation goals
 
 I wanted to make contributing to this documentation as easy as possible.
-That's why I use Markdown. Developers use it, but is just writing in plane English so **everybody** can write documentation!
+That's why I use Markdown. Developers use it, but is just writing in plain English so **everybody** can write documentation!
 And this documentation hosted on Github, developers favorite place to store code.
 Even if you are not a developer. Don't want to clone everything, you still can change the files on the website (you need account to login in and change the `.md` files).
 And as a final resort, you can leave your comments/suggestions/etc at the bottom of the page via Disqus.
