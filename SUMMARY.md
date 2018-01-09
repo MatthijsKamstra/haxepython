@@ -11,7 +11,6 @@ This is the summary of my book.
    * [Hello world](haxe/hello-world.md)
    * [Learn Haxe](haxe/learn-haxe.md)
 * [Haxe and Python](haxepython/about.md)
-   * [Home](haxepython/index.md)
    * [Download](haxepython/download.md)
    * [Resources](haxepython/resource.md)
 * [Example Hello World](00helloworld/about.md)
