@@ -20,4 +20,4 @@ Website: https://matthijskamstra.github.io/haxesys/#/
 
 Github : https://github.com/MatthijsKamstra/haxesys
 
-## This documentation is for now deprecated.
+## This documentation is for now deprecated!
